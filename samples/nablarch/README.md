@@ -1,0 +1,16 @@
+# 検証用のサンプル文書
+
+このフォルダのファイルは、「Nablarch 開発標準」の設計ドキュメントのサンプルを、変更せずに複製したものである。
+
+| 項目 | 内容 |
+|---|---|
+| 出典 | <https://github.com/nablarch-development-standards/nablarch-development-standards> の `030_設計ドキュメント/020_サンプル/` |
+| 著作権者 | TIS 株式会社 |
+| ライセンス | [クリエイティブ・コモンズ 表示 - 継承 4.0 国際](https://creativecommons.org/licenses/by-sa/4.0/deed.ja) |
+
+| ファイル | 使い道 |
+|---|---|
+| `画面遷移図_サンプル.xlsx` | 初回の移行の対象。Excel の図形で描いた遷移図を含む |
+| `システム機能設計書(画面)_照会機能_サンプル.xlsx` | 貼り付け画像の保存（FR-005）のテストに使う |
+
+`migrated/screen-transition/` は、`画面遷移図_サンプル.xlsx` を移行した結果であり、同じライセンスに従う。

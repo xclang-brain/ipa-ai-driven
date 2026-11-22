@@ -1,0 +1,305 @@
+# 要求管理台帳（正本）
+# 要求とその管理属性は、このファイルを正本とする。
+# 人が読むための一覧は tools/render_ledger.py で docs/requirements.md に出力する。
+#
+# baseline: 合意した要求の版。1.0 は 2026-11-22 に依頼者が合意した内容
+# status: 候補 -> 分析済み -> 合意済み（ベースライン） -> 実現済み -> 検証済み / 取り下げ
+# priority: Must / Should / Could
+# source: H-n はヒアリング記録（docs/03-hearing-00x.md）の番号。作成者 は依頼者の発言にない補足
+
+version: 1.1
+updated: 2026-11-22
+requirements:
+  - id: REQ-001
+    title: 既存ドキュメントの移行
+    statement: 既存の Word / Excel ドキュメントの内容を、AI が参照できる形式の文書に移行したい
+    type: ステークホルダー要求
+    source: [H-1, H-5]
+    priority: Must
+    status: 合意済み
+    related: [REQ-005]
+    verification: 未定（工程5で定める）
+    history:
+      - {date: 2026-11-22, change: 候補として登録}
+      - {date: 2026-11-22, change: 分析済みに変更。優先度 Must}
+      - {date: 2026-11-22, change: 合意済みに変更。依頼者が手段と初回の範囲に合意した（ベースライン 1.0）}
+
+  - id: REQ-002
+    title: 表の移行
+    statement: 表の内容を、構造を保ったまま移行したい
+    type: ステークホルダー要求
+    source: [H-1, H-4]
+    priority: Must
+    status: 合意済み
+    related: [REQ-001, REQ-012]
+    verification: 未定（工程5で定める）
+    history:
+      - {date: 2026-11-22, change: 候補として登録}
+      - {date: 2026-11-22, change: 分析済みに変更。優先度 Must}
+      - {date: 2026-11-22, change: 合意済みに変更。依頼者が手段と初回の範囲に合意した（ベースライン 1.0）}
+
+  - id: REQ-003
+    title: 図形で描かれた図の移行
+    statement: Word や Excel の図形で描かれた図（UML など）の内容を、AI が読める形で移行したい
+    type: ステークホルダー要求
+    source: [H-1, H-4]
+    priority: Must
+    status: 合意済み
+    related: [REQ-014, REQ-021]
+    verification: 未定（工程5で定める）
+    history:
+      - {date: 2026-11-22, change: 候補として登録}
+      - {date: 2026-11-22, change: 分析済みに変更。優先度 Must}
+      - {date: 2026-11-22, change: 合意済みに変更。依頼者が手段と初回の範囲に合意した（ベースライン 1.0）}
+
+  - id: REQ-004
+    title: 貼り付け画像の移行
+    statement: 文書に貼り付けられた画像の内容を、AI が読める形で移行したい
+    type: ステークホルダー要求
+    source: [H-1]
+    priority: Should
+    status: 合意済み
+    related: [REQ-003]
+    verification: 未定（工程5で定める）
+    history:
+      - {date: 2026-11-22, change: 候補として登録}
+      - {date: 2026-11-22, change: 分析済みに変更。優先度 Should。初回の対象文書に貼り付け画像がないため、2回目以降で扱う}
+      - {date: 2026-11-22, change: 合意済みに変更。依頼者が手段と初回の範囲に合意した（ベースライン 1.0）}
+
+  - id: REQ-005
+    title: 移行後の文書を正本とする
+    statement: 移行後の文書を正本とし、以後はその文書を更新したい
+    type: ステークホルダー要求
+    source: [H-5]
+    priority: Must
+    status: 合意済み
+    related: [REQ-014, REQ-015, REQ-020]
+    verification: 未定（工程5で定める）
+    history:
+      - {date: 2026-11-22, change: 候補として登録}
+      - {date: 2026-11-22, change: 分析済みに変更。優先度 Must}
+      - {date: 2026-11-22, change: 合意済みに変更。依頼者が手段と初回の範囲に合意した（ベースライン 1.0）}
+
+  - id: REQ-006
+    title: 使う AI は GitHub Copilot のみ
+    statement: 設計文書を渡す AI を GitHub Copilot に限りたい
+    type: 制約
+    source: [H-6]
+    priority: Must
+    status: 合意済み
+    related: [REQ-019]
+    verification: 未定（工程5で定める）
+    history:
+      - {date: 2026-11-22, change: 候補として登録}
+      - {date: 2026-11-22, change: 分析済みに変更。優先度 Must}
+      - {date: 2026-11-22, change: 合意済みに変更。依頼者が手段と初回の範囲に合意した（ベースライン 1.0）}
+
+  - id: REQ-007
+    title: AI による実装・修正
+    statement: AI が、移行後の文書に基づいて実装と修正を行えるようにしたい
+    type: ステークホルダー要求
+    source: [H-7]
+    priority: Should
+    status: 合意済み
+    related: [REQ-008]
+    verification: 未定（工程5で定める）
+    history:
+      - {date: 2026-11-22, change: 候補として登録}
+      - {date: 2026-11-22, change: 分析済みに変更。優先度 Should。移行した文書ができてから取り組む}
+      - {date: 2026-11-22, change: 合意済みに変更。依頼者が手段と初回の範囲に合意した（ベースライン 1.0）}
+
+  - id: REQ-008
+    title: AI による仕様の調査・質問への回答
+    statement: AI が、仕様に関する質問に答えられるようにしたい
+    type: ステークホルダー要求
+    source: [H-7]
+    priority: Must
+    status: 合意済み
+    related: [REQ-013]
+    verification: 未定（工程5で定める）
+    history:
+      - {date: 2026-11-22, change: 候補として登録}
+      - {date: 2026-11-22, change: 分析済みに変更。優先度 Must。移行の出来を測る手段にもなる}
+      - {date: 2026-11-22, change: 合意済みに変更。依頼者が手段と初回の範囲に合意した（ベースライン 1.0）}
+
+  - id: REQ-009
+    title: AI によるテストの作成
+    statement: AI が、仕様からテストを作成できるようにしたい
+    type: ステークホルダー要求
+    source: [H-7]
+    priority: Should
+    status: 合意済み
+    related: [REQ-007]
+    verification: 未定（工程5で定める）
+    history:
+      - {date: 2026-11-22, change: 候補として登録}
+      - {date: 2026-11-22, change: 分析済みに変更。優先度 Should。移行した文書ができてから取り組む}
+      - {date: 2026-11-22, change: 合意済みに変更。依頼者が手段と初回の範囲に合意した（ベースライン 1.0）}
+
+  - id: REQ-010
+    title: AI による仕様とコードの整合確認
+    statement: AI が、仕様とコードの整合を確認できるようにしたい
+    type: ステークホルダー要求
+    source: [H-7]
+    priority: Should
+    status: 合意済み
+    related: [REQ-007]
+    verification: 未定（工程5で定める）
+    history:
+      - {date: 2026-11-22, change: 候補として登録}
+      - {date: 2026-11-22, change: 分析済みに変更。優先度 Should。移行した文書ができてから取り組む}
+      - {date: 2026-11-22, change: 合意済みに変更。依頼者が手段と初回の範囲に合意した（ベースライン 1.0）}
+
+  - id: REQ-011
+    title: 環境整備の期間短縮
+    statement: AI 駆動開発の環境を整えるまでの期間を短くしたい
+    type: ビジネス要求
+    source: [H-2]
+    priority: Should
+    status: 合意済み
+    related: [REQ-018]
+    verification: 未定（工程5で定める）
+    history:
+      - {date: 2026-11-22, change: 候補として登録}
+      - {date: 2026-11-22, change: 分析済みに変更。優先度 Should。正確さ（REQ-012）と衝突する場合は正確さを優先する}
+      - {date: 2026-11-22, change: 合意済みに変更。依頼者が手段と初回の範囲に合意した（ベースライン 1.0）}
+
+  - id: REQ-012
+    title: 原本との一致の確認
+    statement: 移行後の文書が原本の内容と一致していることを確認できるようにしたい
+    type: 評価要求
+    source: [作成者]
+    priority: Must
+    status: 合意済み
+    related: [REQ-017, REQ-020, REQ-021]
+    verification: 未定（工程5で定める）
+    history:
+      - {date: 2026-11-22, change: 候補として登録（作成者の補足）}
+      - {date: 2026-11-22, change: 分析済みに変更。優先度 Must。依頼者から訂正なし}
+      - {date: 2026-11-22, change: 合意済みに変更。依頼者が手段と初回の範囲に合意した（ベースライン 1.0）}
+
+  - id: REQ-013
+    title: 原本の箇所への追跡
+    statement: 移行後の文書の各部分が、原本のどの文書のどの箇所に由来するかを追えるようにしたい
+    type: ステークホルダー要求
+    source: [作成者]
+    priority: Must
+    status: 合意済み
+    related: [REQ-008, REQ-012]
+    verification: 未定（工程5で定める）
+    history:
+      - {date: 2026-11-22, change: 候補として登録（作成者の補足）}
+      - {date: 2026-11-22, change: 分析済みに変更。優先度 Must。依頼者から訂正なし}
+      - {date: 2026-11-22, change: 合意済みに変更。依頼者が手段と初回の範囲に合意した（ベースライン 1.0）}
+
+  - id: REQ-014
+    title: 図の編集
+    statement: 移行後の図を、人と AI の両方が編集できるようにしたい
+    type: ステークホルダー要求
+    source: [作成者]
+    priority: Must
+    status: 合意済み
+    related: [REQ-003, REQ-005]
+    verification: 未定（工程5で定める）
+    history:
+      - {date: 2026-11-22, change: 候補として登録（作成者の補足）}
+      - {date: 2026-11-22, change: 分析済みに変更。優先度 Must。依頼者から訂正なし}
+      - {date: 2026-11-22, change: 合意済みに変更。依頼者が手段と初回の範囲に合意した（ベースライン 1.0）}
+
+  - id: REQ-015
+    title: 原本の保管
+    statement: 原本を移行後も保管し、移行済みで正本ではないことが分かるようにしたい
+    type: 運用要求
+    source: [作成者]
+    priority: Should
+    status: 合意済み
+    related: [REQ-005]
+    verification: 未定（工程5で定める）
+    history:
+      - {date: 2026-11-22, change: 候補として登録（作成者の補足）}
+      - {date: 2026-11-22, change: 分析済みに変更。優先度 Should。依頼者から訂正なし}
+      - {date: 2026-11-22, change: 合意済みに変更。依頼者が手段と初回の範囲に合意した（ベースライン 1.0）}
+
+  - id: REQ-016
+    title: まず1つの文書を移行する
+    statement: まず1つの文書を移行できるようにしたい
+    type: ステークホルダー要求
+    source: [H-11]
+    priority: Must
+    status: 合意済み
+    related: [REQ-018]
+    verification: 未定（工程5で定める）
+    history:
+      - {date: 2026-11-22, change: 候補として登録}
+      - {date: 2026-11-22, change: 分析済みに変更。優先度 Must。初回の範囲を決める要求}
+      - {date: 2026-11-22, change: 合意済みに変更。依頼者が手段と初回の範囲に合意した（ベースライン 1.0）}
+
+  - id: REQ-017
+    title: 確認はまず AI が行う
+    statement: 移行結果の確認は、まず AI が行い、人はほぼ完成した段階で確認したい
+    type: ステークホルダー要求
+    source: [H-12]
+    priority: Must
+    status: 合意済み
+    related: [REQ-012, REQ-020]
+    verification: 未定（工程5で定める）
+    history:
+      - {date: 2026-11-22, change: 候補として登録}
+      - {date: 2026-11-22, change: 分析済みに変更。優先度 Must}
+      - {date: 2026-11-22, change: 合意済みに変更。依頼者が手段と初回の範囲に合意した（ベースライン 1.0）}
+
+  - id: REQ-018
+    title: 文書の規模
+    statement: 1文書100ページ程度、100文書以上の規模を扱えるようにしたい
+    type: ステークホルダー要求
+    source: [H-11]
+    priority: Should
+    status: 合意済み
+    related: [REQ-011, REQ-016]
+    verification: 未定（工程5で定める）
+    history:
+      - {date: 2026-11-22, change: 候補として登録}
+      - {date: 2026-11-22, change: 分析済みに変更。優先度 Should。手段を選ぶときに考慮する。初回では検証しない}
+      - {date: 2026-11-22, change: 合意済みに変更。依頼者が手段と初回の範囲に合意した（ベースライン 1.0）}
+
+  - id: REQ-019
+    title: 移行作業の環境
+    statement: 移行作業を Windows、Office、Python、Copilot CLI で行いたい
+    type: 制約
+    source: [H-9, H-10]
+    priority: Must
+    status: 合意済み
+    related: [REQ-006]
+    verification: 未定（工程5で定める）
+    history:
+      - {date: 2026-11-22, change: 候補として登録}
+      - {date: 2026-11-22, change: 分析済みに変更。優先度 Must}
+      - {date: 2026-11-22, change: 合意済みに変更。依頼者が手段と初回の範囲に合意した（ベースライン 1.0）}
+
+  - id: REQ-020
+    title: 確認の状態の表示
+    statement: 移行後の文書ごとに、確認がどこまで済んでいるか（未確認、AI が確認済み、人が承認済み）が分かるようにしたい
+    type: 運用要求
+    source: [作成者, H-13]
+    priority: Must
+    status: 合意済み
+    related: [REQ-005, REQ-012, REQ-017]
+    verification: 未定（工程5で定める）
+    history:
+      - {date: 2026-11-22, change: 要求分析で追加（作成者の補足）。REQ-017 と REQ-012 の両立のため。依頼者は未確認}
+      - {date: 2026-11-22, change: ベースライン 1.0 に含める。手段と初回の範囲への合意の中で扱ったが、この要求そのものについての依頼者の明示の確認は得ていない}
+      - {date: 2026-11-22, change: 合意済みに変更。依頼者が、そのまま採用してよいと回答した（CHG-006）}
+
+  - id: REQ-021
+    title: 読み取れない箇所の扱い
+    statement: AI が読み取れなかった箇所や確信のない箇所を、推測で埋めずに印を付けて残したい
+    type: AI要求
+    source: [作成者, H-13]
+    priority: Must
+    status: 合意済み
+    related: [REQ-003, REQ-012]
+    verification: 未定（工程5で定める）
+    history:
+      - {date: 2026-11-22, change: 要求分析で追加（作成者の補足）。ハンドブック 5.3 節「AI が迷ったときの振る舞い」に基づく。依頼者は未確認}
+      - {date: 2026-11-22, change: ベースライン 1.0 に含める。手段と初回の範囲への合意の中で扱ったが、この要求そのものについての依頼者の明示の確認は得ていない}
+      - {date: 2026-11-22, change: 合意済みに変更。依頼者が、そのまま採用してよいと回答した（CHG-006）}
