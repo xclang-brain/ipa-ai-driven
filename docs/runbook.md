@@ -100,6 +100,22 @@ python -m docmig verify migrated\trial-01
 | 移行後の文書について Copilot に質問した結果（質問、回答、正誤） | S-3 |
 | 人が作業した時間 | S-4 |
 
+## クラウドの開発環境で動かすとき
+
+Claude のクラウド環境では、Copilot CLI の通常のログインが通らない。起動時の利用者の確認（`api.github.com/copilot_internal/user`）を、環境の GitHub 用プロキシが拒否するためである。次の設定を入れてから `copilot` を実行すると、Copilot のサービスに直接つながる（2026-11-22、Copilot CLI 1.0.114 で確認）。
+
+```bash
+export COPILOT_PROVIDER_BASE_URL=https://api.githubcopilot.com
+export COPILOT_PROVIDER_BEARER_TOKEN="$COPILOT_GITHUB_TOKEN"
+export COPILOT_PROVIDER_HEADERS=$'Copilot-Integration-Id: copilot-developer-cli\nCopilot-Vision-Request: true'
+export COPILOT_PROVIDER_VISION=true
+export COPILOT_MODEL=gpt-4.1
+```
+
+- `COPILOT_GITHUB_TOKEN` は、「Copilot Requests」の権限を付けた fine-grained PAT で、環境の設定に入れておく。
+- GitHub の文書にない使い方である。使うかどうかは依頼者が決める。
+- モデルの自動選択は使えない。確認した時点で応答したモデルは gpt-4.1 だけだった。結果は [要求評価](07-evaluation.md) の 3.3 にある。
+
 ## 自分の文書で試すとき
 
 `samples\...` の部分を、自分の Excel ファイルの場所に変える。出力先（`--out`）は、文書ごとに別のフォルダにする。
