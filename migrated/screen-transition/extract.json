@@ -1,0 +1,3237 @@
+{
+  "tool": {
+    "name": "docmig",
+    "version": "0.1.0"
+  },
+  "source": {
+    "file": "画面遷移図_サンプル.xlsx",
+    "sha256": "c2be27649826e5d15ef28d7d26a921e0bc815dae8feb7bd5493c2bec9dd56c2a",
+    "kind": "xlsx"
+  },
+  "sheets": [
+    {
+      "index": 1,
+      "name": "表紙",
+      "state": "visible",
+      "cells": [
+        {
+          "ref": "J23",
+          "row": 23,
+          "col": 10,
+          "end_col": 10,
+          "text": "第１．０版",
+          "merge": null,
+          "filled": false
+        },
+        {
+          "ref": "I25",
+          "row": 25,
+          "col": 9,
+          "end_col": 11,
+          "text": "2018-08-24",
+          "merge": "I25:K25",
+          "filled": false
+        }
+      ],
+      "blocks": [
+        {
+          "id": "s1-b1",
+          "kind": "text",
+          "range": "J23:J23",
+          "first_row_is_header": false,
+          "rows": [
+            [
+              "J23"
+            ]
+          ],
+          "common_header_of": null,
+          "is_common_header": false
+        },
+        {
+          "id": "s1-b2",
+          "kind": "text",
+          "range": "I25:K25",
+          "first_row_is_header": false,
+          "rows": [
+            [
+              "I25"
+            ]
+          ],
+          "common_header_of": null,
+          "is_common_header": false
+        }
+      ],
+      "shapes": [
+        {
+          "id": "3",
+          "name": "Text Box 12",
+          "kind": "rect",
+          "anchor": "P2:S5",
+          "group": "2",
+          "text": "関係者外秘",
+          "textbox": true,
+          "bbox": [
+            7953375,
+            285750,
+            1400175,
+            266700
+          ]
+        },
+        {
+          "id": "4",
+          "name": "Text Box 13",
+          "kind": "rect",
+          "anchor": "P2:S5",
+          "group": "2",
+          "text": "PJ関係者限り",
+          "textbox": true,
+          "bbox": [
+            7953375,
+            552450,
+            1400175,
+            323850
+          ]
+        },
+        {
+          "id": "5",
+          "name": "Text Box 18",
+          "kind": "rect",
+          "anchor": "D9:Q20",
+          "group": null,
+          "text": "サンプルプロジェクト\n\n画面遷移図\n\nサンプルサブシステム",
+          "textbox": true,
+          "bbox": [
+            1590675,
+            1590675,
+            6562725,
+            1895475
+          ]
+        },
+        {
+          "id": "7",
+          "name": "正方形/長方形 6",
+          "kind": "rect",
+          "anchor": "E13",
+          "group": null,
+          "text": "SAMPLE",
+          "textbox": false,
+          "bbox": [
+            2428875,
+            2190750,
+            5473999,
+            1871540
+          ]
+        }
+      ],
+      "connectors": [],
+      "pictures": [],
+      "groups": [
+        {
+          "id": "2",
+          "name": "Group 17",
+          "bbox": [
+            7953375,
+            285750,
+            1400175,
+            590550
+          ]
+        }
+      ],
+      "unsupported": [],
+      "images": [
+        "figures/sheet-01-p1.png"
+      ]
+    },
+    {
+      "index": 2,
+      "name": "変更履歴",
+      "state": "visible",
+      "cells": [
+        {
+          "ref": "A1",
+          "row": 1,
+          "col": 1,
+          "end_col": 4,
+          "text": "PJ名",
+          "merge": "A1:D1",
+          "filled": true,
+          "header": "代表"
+        },
+        {
+          "ref": "E1",
+          "row": 1,
+          "col": 5,
+          "end_col": 14,
+          "text": "サンプルプロジェクト",
+          "merge": "E1:N1",
+          "filled": false,
+          "header": "代表"
+        },
+        {
+          "ref": "O1",
+          "row": 1,
+          "col": 15,
+          "end_col": 18,
+          "text": "成果物名",
+          "merge": "O1:R3",
+          "filled": true,
+          "header": "代表"
+        },
+        {
+          "ref": "S1",
+          "row": 1,
+          "col": 19,
+          "end_col": 26,
+          "text": "画面遷移図",
+          "merge": "S1:Z3",
+          "filled": false,
+          "header": "代表"
+        },
+        {
+          "ref": "AA1",
+          "row": 1,
+          "col": 27,
+          "end_col": 28,
+          "text": "作成",
+          "merge": "AA1:AB1",
+          "filled": true,
+          "header": "代表"
+        },
+        {
+          "ref": "AC1",
+          "row": 1,
+          "col": 29,
+          "end_col": 32,
+          "text": "TIS",
+          "merge": "AC1:AF1",
+          "filled": false,
+          "header": "代表"
+        },
+        {
+          "ref": "AG1",
+          "row": 1,
+          "col": 33,
+          "end_col": 35,
+          "text": "2018-08-24",
+          "merge": "AG1:AI1",
+          "filled": false,
+          "header": "代表"
+        },
+        {
+          "ref": "A2",
+          "row": 2,
+          "col": 1,
+          "end_col": 4,
+          "text": "システム名",
+          "merge": "A2:D2",
+          "filled": true,
+          "header": "代表"
+        },
+        {
+          "ref": "E2",
+          "row": 2,
+          "col": 5,
+          "end_col": 14,
+          "text": "サンプルシステム",
+          "merge": "E2:N2",
+          "filled": false,
+          "header": "代表"
+        },
+        {
+          "ref": "AA2",
+          "row": 2,
+          "col": 27,
+          "end_col": 28,
+          "text": "変更",
+          "merge": "AA2:AB2",
+          "filled": true,
+          "header": "代表"
+        },
+        {
+          "ref": "A3",
+          "row": 3,
+          "col": 1,
+          "end_col": 4,
+          "text": "サブシステム名",
+          "merge": "A3:D3",
+          "filled": true,
+          "header": "代表"
+        },
+        {
+          "ref": "E3",
+          "row": 3,
+          "col": 5,
+          "end_col": 14,
+          "text": "サンプルサブシステム",
+          "merge": "E3:N3",
+          "filled": false,
+          "header": "代表"
+        },
+        {
+          "ref": "N5",
+          "row": 5,
+          "col": 14,
+          "end_col": 14,
+          "text": "変更履歴（ 1　/ 1 ）",
+          "merge": null,
+          "filled": false
+        },
+        {
+          "ref": "A7",
+          "row": 7,
+          "col": 1,
+          "end_col": 1,
+          "text": "No.",
+          "merge": null,
+          "filled": false
+        },
+        {
+          "ref": "B7",
+          "row": 7,
+          "col": 2,
+          "end_col": 3,
+          "text": "版数",
+          "merge": "B7:C7",
+          "filled": false
+        },
+        {
+          "ref": "D7",
+          "row": 7,
+          "col": 4,
+          "end_col": 6,
+          "text": "変更日",
+          "merge": "D7:F7",
+          "filled": false
+        },
+        {
+          "ref": "G7",
+          "row": 7,
+          "col": 7,
+          "end_col": 9,
+          "text": "区分",
+          "merge": "G7:I7",
+          "filled": false
+        },
+        {
+          "ref": "J7",
+          "row": 7,
+          "col": 10,
+          "end_col": 16,
+          "text": "変更箇所（項番等）",
+          "merge": "J7:P7",
+          "filled": false
+        },
+        {
+          "ref": "Q7",
+          "row": 7,
+          "col": 17,
+          "end_col": 31,
+          "text": "変更内容",
+          "merge": "Q7:AE7",
+          "filled": false
+        },
+        {
+          "ref": "AF7",
+          "row": 7,
+          "col": 32,
+          "end_col": 35,
+          "text": "担当者",
+          "merge": "AF7:AI7",
+          "filled": false
+        },
+        {
+          "ref": "A8",
+          "row": 8,
+          "col": 1,
+          "end_col": 1,
+          "text": "1",
+          "merge": null,
+          "filled": false
+        },
+        {
+          "ref": "B8",
+          "row": 8,
+          "col": 2,
+          "end_col": 3,
+          "text": "1.0版",
+          "merge": "B8:C8",
+          "filled": false
+        },
+        {
+          "ref": "D8",
+          "row": 8,
+          "col": 4,
+          "end_col": 6,
+          "text": "2018-08-24",
+          "merge": "D8:F8",
+          "filled": false
+        },
+        {
+          "ref": "G8",
+          "row": 8,
+          "col": 7,
+          "end_col": 9,
+          "text": "新規",
+          "merge": "G8:I8",
+          "filled": false
+        },
+        {
+          "ref": "J8",
+          "row": 8,
+          "col": 10,
+          "end_col": 16,
+          "text": "-",
+          "merge": "J8:P8",
+          "filled": false
+        },
+        {
+          "ref": "Q8",
+          "row": 8,
+          "col": 17,
+          "end_col": 31,
+          "text": "(新規作成)",
+          "merge": "Q8:AE8",
+          "filled": false
+        },
+        {
+          "ref": "AF8",
+          "row": 8,
+          "col": 32,
+          "end_col": 35,
+          "text": "TIS",
+          "merge": "AF8:AI8",
+          "filled": false
+        }
+      ],
+      "blocks": [
+        {
+          "id": "s2-b1",
+          "kind": "table",
+          "range": "A1:AI3",
+          "first_row_is_header": false,
+          "rows": [
+            [
+              "A1",
+              "E1",
+              "O1",
+              "S1",
+              "AA1",
+              "AC1",
+              "AG1"
+            ],
+            [
+              "A2",
+              "E2",
+              "AA2"
+            ],
+            [
+              "A3",
+              "E3"
+            ]
+          ],
+          "common_header_of": null,
+          "is_common_header": true
+        },
+        {
+          "id": "s2-b2",
+          "kind": "text",
+          "range": "N5:N5",
+          "first_row_is_header": false,
+          "rows": [
+            [
+              "N5"
+            ]
+          ],
+          "common_header_of": null,
+          "is_common_header": false
+        },
+        {
+          "id": "s2-b3",
+          "kind": "table",
+          "range": "A7:AI8",
+          "first_row_is_header": false,
+          "rows": [
+            [
+              "A7",
+              "B7",
+              "D7",
+              "G7",
+              "J7",
+              "Q7",
+              "AF7"
+            ],
+            [
+              "A8",
+              "B8",
+              "D8",
+              "G8",
+              "J8",
+              "Q8",
+              "AF8"
+            ]
+          ],
+          "common_header_of": null,
+          "is_common_header": false
+        }
+      ],
+      "shapes": [
+        {
+          "id": "3",
+          "name": "正方形/長方形 2",
+          "kind": "rect",
+          "anchor": "H11",
+          "group": null,
+          "text": "SAMPLE",
+          "textbox": false,
+          "bbox": [
+            2190750,
+            1943100,
+            5473999,
+            1871540
+          ]
+        }
+      ],
+      "connectors": [],
+      "pictures": [],
+      "groups": [],
+      "unsupported": [],
+      "images": [
+        "figures/sheet-02-p1.png"
+      ]
+    },
+    {
+      "index": 3,
+      "name": "目次",
+      "state": "visible",
+      "cells": [
+        {
+          "ref": "A1",
+          "row": 1,
+          "col": 1,
+          "end_col": 4,
+          "text": "PJ名",
+          "merge": "A1:D1",
+          "filled": true,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "E1",
+          "row": 1,
+          "col": 5,
+          "end_col": 14,
+          "text": "サンプルプロジェクト",
+          "merge": "E1:N1",
+          "filled": false,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "O1",
+          "row": 1,
+          "col": 15,
+          "end_col": 18,
+          "text": "成果物名",
+          "merge": "O1:R3",
+          "filled": true,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "S1",
+          "row": 1,
+          "col": 19,
+          "end_col": 26,
+          "text": "画面遷移図",
+          "merge": "S1:Z3",
+          "filled": false,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "AA1",
+          "row": 1,
+          "col": 27,
+          "end_col": 28,
+          "text": "作成",
+          "merge": "AA1:AB1",
+          "filled": true,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "AC1",
+          "row": 1,
+          "col": 29,
+          "end_col": 32,
+          "text": "TIS",
+          "merge": "AC1:AF1",
+          "filled": false,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "AG1",
+          "row": 1,
+          "col": 33,
+          "end_col": 35,
+          "text": "2018-08-24",
+          "merge": "AG1:AI1",
+          "filled": false,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "A2",
+          "row": 2,
+          "col": 1,
+          "end_col": 4,
+          "text": "システム名",
+          "merge": "A2:D2",
+          "filled": true,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "E2",
+          "row": 2,
+          "col": 5,
+          "end_col": 14,
+          "text": "サンプルシステム",
+          "merge": "E2:N2",
+          "filled": false,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "AA2",
+          "row": 2,
+          "col": 27,
+          "end_col": 28,
+          "text": "変更",
+          "merge": "AA2:AB2",
+          "filled": true,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "A3",
+          "row": 3,
+          "col": 1,
+          "end_col": 4,
+          "text": "サブシステム名",
+          "merge": "A3:D3",
+          "filled": true,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "E3",
+          "row": 3,
+          "col": 5,
+          "end_col": 14,
+          "text": "サンプルサブシステム",
+          "merge": "E3:N3",
+          "filled": false,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "Q5",
+          "row": 5,
+          "col": 17,
+          "end_col": 17,
+          "text": "目次",
+          "merge": null,
+          "filled": false
+        },
+        {
+          "ref": "B7",
+          "row": 7,
+          "col": 2,
+          "end_col": 2,
+          "text": "1. 企業情報管理(11AA)",
+          "merge": null,
+          "filled": false
+        },
+        {
+          "ref": "B9",
+          "row": 9,
+          "col": 2,
+          "end_col": 2,
+          "text": "2. 顧客情報管理(11AB)",
+          "merge": null,
+          "filled": false
+        }
+      ],
+      "blocks": [
+        {
+          "id": "s3-b1",
+          "kind": "table",
+          "range": "A1:AI3",
+          "first_row_is_header": false,
+          "rows": [
+            [
+              "A1",
+              "E1",
+              "O1",
+              "S1",
+              "AA1",
+              "AC1",
+              "AG1"
+            ],
+            [
+              "A2",
+              "E2",
+              "AA2"
+            ],
+            [
+              "A3",
+              "E3"
+            ]
+          ],
+          "common_header_of": "s2-b1",
+          "is_common_header": false
+        },
+        {
+          "id": "s3-b2",
+          "kind": "text",
+          "range": "Q5:Q5",
+          "first_row_is_header": false,
+          "rows": [
+            [
+              "Q5"
+            ]
+          ],
+          "common_header_of": null,
+          "is_common_header": false
+        },
+        {
+          "id": "s3-b3",
+          "kind": "text",
+          "range": "B7:B7",
+          "first_row_is_header": false,
+          "rows": [
+            [
+              "B7"
+            ]
+          ],
+          "common_header_of": null,
+          "is_common_header": false
+        },
+        {
+          "id": "s3-b4",
+          "kind": "text",
+          "range": "B9:B9",
+          "first_row_is_header": false,
+          "rows": [
+            [
+              "B9"
+            ]
+          ],
+          "common_header_of": null,
+          "is_common_header": false
+        }
+      ],
+      "shapes": [
+        {
+          "id": "3",
+          "name": "正方形/長方形 2",
+          "kind": "rect",
+          "anchor": "G13",
+          "group": null,
+          "text": "SAMPLE",
+          "textbox": false,
+          "bbox": [
+            1847850,
+            2305050,
+            5473999,
+            1871540
+          ]
+        }
+      ],
+      "connectors": [],
+      "pictures": [],
+      "groups": [],
+      "unsupported": [],
+      "images": [
+        "figures/sheet-03-p1.png"
+      ]
+    },
+    {
+      "index": 4,
+      "name": "1. 企業情報管理(11AA)",
+      "state": "visible",
+      "cells": [
+        {
+          "ref": "A1",
+          "row": 1,
+          "col": 1,
+          "end_col": 4,
+          "text": "PJ名",
+          "merge": "A1:D1",
+          "filled": true,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "E1",
+          "row": 1,
+          "col": 5,
+          "end_col": 14,
+          "text": "サンプルプロジェクト",
+          "merge": "E1:N1",
+          "filled": false,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "O1",
+          "row": 1,
+          "col": 15,
+          "end_col": 18,
+          "text": "成果物名",
+          "merge": "O1:R3",
+          "filled": true,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "S1",
+          "row": 1,
+          "col": 19,
+          "end_col": 26,
+          "text": "画面遷移図",
+          "merge": "S1:Z3",
+          "filled": false,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "AA1",
+          "row": 1,
+          "col": 27,
+          "end_col": 28,
+          "text": "作成",
+          "merge": "AA1:AB1",
+          "filled": true,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "AC1",
+          "row": 1,
+          "col": 29,
+          "end_col": 32,
+          "text": "TIS",
+          "merge": "AC1:AF1",
+          "filled": false,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "AG1",
+          "row": 1,
+          "col": 33,
+          "end_col": 35,
+          "text": "2018-08-24",
+          "merge": "AG1:AI1",
+          "filled": false,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "A2",
+          "row": 2,
+          "col": 1,
+          "end_col": 4,
+          "text": "システム名",
+          "merge": "A2:D2",
+          "filled": true,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "E2",
+          "row": 2,
+          "col": 5,
+          "end_col": 14,
+          "text": "サンプルシステム",
+          "merge": "E2:N2",
+          "filled": false,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "AA2",
+          "row": 2,
+          "col": 27,
+          "end_col": 28,
+          "text": "変更",
+          "merge": "AA2:AB2",
+          "filled": true,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "A3",
+          "row": 3,
+          "col": 1,
+          "end_col": 4,
+          "text": "サブシステム名",
+          "merge": "A3:D3",
+          "filled": true,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "E3",
+          "row": 3,
+          "col": 5,
+          "end_col": 14,
+          "text": "サンプルサブシステム",
+          "merge": "E3:N3",
+          "filled": false,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "B5",
+          "row": 5,
+          "col": 2,
+          "end_col": 2,
+          "text": "1. 企業情報管理(11AA)",
+          "merge": null,
+          "filled": false
+        }
+      ],
+      "blocks": [
+        {
+          "id": "s4-b1",
+          "kind": "table",
+          "range": "A1:AI3",
+          "first_row_is_header": false,
+          "rows": [
+            [
+              "A1",
+              "E1",
+              "O1",
+              "S1",
+              "AA1",
+              "AC1",
+              "AG1"
+            ],
+            [
+              "A2",
+              "E2",
+              "AA2"
+            ],
+            [
+              "A3",
+              "E3"
+            ]
+          ],
+          "common_header_of": "s2-b1",
+          "is_common_header": false
+        },
+        {
+          "id": "s4-b2",
+          "kind": "text",
+          "range": "B5:B5",
+          "first_row_is_header": false,
+          "rows": [
+            [
+              "B5"
+            ]
+          ],
+          "common_header_of": null,
+          "is_common_header": false
+        }
+      ],
+      "shapes": [
+        {
+          "id": "23872",
+          "name": "AutoShape 270",
+          "kind": "roundRect",
+          "anchor": "K11:AI22",
+          "group": null,
+          "text": "",
+          "textbox": false,
+          "bbox": [
+            2838450,
+            1609725,
+            6677025,
+            1457325
+          ]
+        },
+        {
+          "id": "23873",
+          "name": "AutoShape 289",
+          "kind": "roundRect",
+          "anchor": "K43:AI52",
+          "group": null,
+          "text": "",
+          "textbox": false,
+          "bbox": [
+            2838450,
+            6153150,
+            6677025,
+            1209675
+          ]
+        },
+        {
+          "id": "23874",
+          "name": "AutoShape 288",
+          "kind": "roundRect",
+          "anchor": "K31:AI42",
+          "group": null,
+          "text": "",
+          "textbox": false,
+          "bbox": [
+            2838450,
+            4457700,
+            6677025,
+            1457325
+          ]
+        },
+        {
+          "id": "23714",
+          "name": "Rectangle 162",
+          "kind": "rect",
+          "anchor": "T30:Z32",
+          "group": null,
+          "text": "SW11AA03/企業情報更新",
+          "textbox": false,
+          "bbox": [
+            5419725,
+            4286250,
+            1485900,
+            209550
+          ]
+        },
+        {
+          "id": "23577",
+          "name": "Text Box 25",
+          "kind": "rect",
+          "anchor": "Q34:T36",
+          "group": null,
+          "text": "確認",
+          "textbox": true,
+          "bbox": [
+            4467225,
+            4876800,
+            904875,
+            212229
+          ]
+        },
+        {
+          "id": "23663",
+          "name": "Text Box 111",
+          "kind": "rect",
+          "anchor": "T38:W40",
+          "group": null,
+          "text": "戻る",
+          "textbox": true,
+          "bbox": [
+            5314950,
+            5410200,
+            762000,
+            314325
+          ]
+        },
+        {
+          "id": "23798",
+          "name": "Rectangle 246",
+          "kind": "rect",
+          "anchor": "M35:Q39",
+          "group": null,
+          "text": "企業情報更新\n【W11AA0301】",
+          "textbox": false,
+          "bbox": [
+            3314700,
+            4953000,
+            1104900,
+            571500
+          ]
+        },
+        {
+          "id": "23592",
+          "name": "Text Box 40",
+          "kind": "rect",
+          "anchor": "Z34:AC36",
+          "group": null,
+          "text": "確定",
+          "textbox": true,
+          "bbox": [
+            6943725,
+            4867275,
+            990600,
+            219075
+          ]
+        },
+        {
+          "id": "23800",
+          "name": "Rectangle 248",
+          "kind": "rect",
+          "anchor": "V35:Z39",
+          "group": null,
+          "text": "企業情報更新確認\n【W11AA0302】",
+          "textbox": false,
+          "bbox": [
+            5800725,
+            4953000,
+            1104900,
+            571500
+          ]
+        },
+        {
+          "id": "23818",
+          "name": "Rectangle 266",
+          "kind": "rect",
+          "anchor": "AE35:AI39",
+          "group": null,
+          "text": "企業情報更新完了\n【W11AA0303】",
+          "textbox": false,
+          "bbox": [
+            8286750,
+            4953000,
+            1104900,
+            571500
+          ]
+        },
+        {
+          "id": "23608",
+          "name": "Text Box 56",
+          "kind": "rect",
+          "anchor": "AG33:AI35",
+          "group": null,
+          "text": "一覧照会へ",
+          "textbox": true,
+          "bbox": [
+            8858250,
+            4743450,
+            723900,
+            228600
+          ]
+        },
+        {
+          "id": "23889",
+          "name": "AutoShape 158",
+          "kind": "roundRect",
+          "anchor": "B20:J43",
+          "group": null,
+          "text": "",
+          "textbox": false,
+          "bbox": [
+            476250,
+            2867025,
+            2266950,
+            3238500
+          ]
+        },
+        {
+          "id": "23712",
+          "name": "Rectangle 160",
+          "kind": "rect",
+          "anchor": "D19:I21",
+          "group": null,
+          "text": "SW11AA01/企業情報照会",
+          "textbox": false,
+          "bbox": [
+            876300,
+            2695575,
+            1476375,
+            219075
+          ]
+        },
+        {
+          "id": "23558",
+          "name": "Rectangle 6",
+          "kind": "rect",
+          "anchor": "D22:H29",
+          "group": null,
+          "text": "企業情報一覧照会\n【W11AA0101】",
+          "textbox": false,
+          "bbox": [
+            866775,
+            3095625,
+            1076325,
+            1000125
+          ]
+        },
+        {
+          "id": "23565",
+          "name": "Text Box 13",
+          "kind": "rect",
+          "anchor": "H22:L23",
+          "group": null,
+          "text": "検索",
+          "textbox": true,
+          "bbox": [
+            2028825,
+            3048001,
+            1133475,
+            266700
+          ]
+        },
+        {
+          "id": "23570",
+          "name": "Rectangle 18",
+          "kind": "rect",
+          "anchor": "D35:H39",
+          "group": null,
+          "text": "企業情報詳細\n【W11AA0102】",
+          "textbox": false,
+          "bbox": [
+            866775,
+            4953000,
+            1066800,
+            571500
+          ]
+        },
+        {
+          "id": "23576",
+          "name": "Text Box 24",
+          "kind": "rect",
+          "anchor": "H34:K36",
+          "group": null,
+          "text": "更新",
+          "textbox": true,
+          "bbox": [
+            2028825,
+            4895850,
+            923925,
+            219075
+          ]
+        },
+        {
+          "id": "23579",
+          "name": "Text Box 27",
+          "kind": "rect",
+          "anchor": "C33:F35",
+          "group": null,
+          "text": "戻る",
+          "textbox": true,
+          "bbox": [
+            800100,
+            4714875,
+            666750,
+            238125
+          ]
+        },
+        {
+          "id": "23898",
+          "name": "Text Box 52",
+          "kind": "rect",
+          "anchor": "F25:F26",
+          "group": null,
+          "text": "",
+          "textbox": true,
+          "bbox": [
+            1571625,
+            3562350,
+            47625,
+            133350
+          ]
+        },
+        {
+          "id": "23899",
+          "name": "Text Box 54",
+          "kind": "rect",
+          "anchor": "J31:J32",
+          "group": null,
+          "text": "",
+          "textbox": true,
+          "bbox": [
+            2514600,
+            4391025,
+            57150,
+            142875
+          ]
+        },
+        {
+          "id": "23677",
+          "name": "Text Box 125",
+          "kind": "rect",
+          "anchor": "G29:K32",
+          "group": null,
+          "text": "企業コード",
+          "textbox": true,
+          "bbox": [
+            1724025,
+            4124325,
+            1047750,
+            466725
+          ]
+        },
+        {
+          "id": "23578",
+          "name": "Text Box 26",
+          "kind": "rect",
+          "anchor": "K38:N40",
+          "group": null,
+          "text": "戻る",
+          "textbox": true,
+          "bbox": [
+            2924175,
+            5410200,
+            666750,
+            285750
+          ]
+        },
+        {
+          "id": "23759",
+          "name": "Rectangle 207",
+          "kind": "rect",
+          "anchor": "T42:Z44",
+          "group": null,
+          "text": "SW11AA04/企業情報削除",
+          "textbox": false,
+          "bbox": [
+            5476875,
+            5972175,
+            1524000,
+            219075
+          ]
+        },
+        {
+          "id": "23810",
+          "name": "Text Box 258",
+          "kind": "rect",
+          "anchor": "Q45:T47",
+          "group": null,
+          "text": "確定",
+          "textbox": true,
+          "bbox": [
+            4457700,
+            6457950,
+            990600,
+            209550
+          ]
+        },
+        {
+          "id": "23812",
+          "name": "Rectangle 260",
+          "kind": "rect",
+          "anchor": "M46:Q50",
+          "group": null,
+          "text": "企業情報削除確認\n【W11AA0402】",
+          "textbox": false,
+          "bbox": [
+            3314700,
+            6543675,
+            1104900,
+            571500
+          ]
+        },
+        {
+          "id": "23815",
+          "name": "Text Box 263",
+          "kind": "rect",
+          "anchor": "K49:N51",
+          "group": null,
+          "text": "戻る",
+          "textbox": true,
+          "bbox": [
+            2933700,
+            6991350,
+            666750,
+            285750
+          ]
+        },
+        {
+          "id": "23817",
+          "name": "Rectangle 265",
+          "kind": "rect",
+          "anchor": "V46:Z50",
+          "group": null,
+          "text": "企業情報削除完了\n【W11AA0403】",
+          "textbox": false,
+          "bbox": [
+            5800725,
+            6543675,
+            1104900,
+            571500
+          ]
+        },
+        {
+          "id": "23819",
+          "name": "Text Box 267",
+          "kind": "rect",
+          "anchor": "Z45:AD47",
+          "group": null,
+          "text": "一覧照会へ",
+          "textbox": true,
+          "bbox": [
+            6924675,
+            6438900,
+            1295400,
+            219075
+          ]
+        },
+        {
+          "id": "23823",
+          "name": "Rectangle 271",
+          "kind": "rect",
+          "anchor": "T10:Z12",
+          "group": null,
+          "text": "SW11AA02/企業情報登録",
+          "textbox": false,
+          "bbox": [
+            5419725,
+            1428750,
+            1485900,
+            209550
+          ]
+        },
+        {
+          "id": "23824",
+          "name": "Text Box 272",
+          "kind": "rect",
+          "anchor": "Q14:T16",
+          "group": null,
+          "text": "確認",
+          "textbox": true,
+          "bbox": [
+            4467225,
+            2038351,
+            904875,
+            203002
+          ]
+        },
+        {
+          "id": "23825",
+          "name": "Text Box 273",
+          "kind": "rect",
+          "anchor": "T18:W20",
+          "group": null,
+          "text": "戻る",
+          "textbox": true,
+          "bbox": [
+            5314950,
+            2552700,
+            762000,
+            314325
+          ]
+        },
+        {
+          "id": "23826",
+          "name": "Rectangle 274",
+          "kind": "rect",
+          "anchor": "M15:Q19",
+          "group": null,
+          "text": "企業情報登録\n【W11AA0201】",
+          "textbox": false,
+          "bbox": [
+            3314700,
+            2095500,
+            1104900,
+            571500
+          ]
+        },
+        {
+          "id": "23830",
+          "name": "Text Box 278",
+          "kind": "rect",
+          "anchor": "Z14:AC16",
+          "group": null,
+          "text": "確定",
+          "textbox": true,
+          "bbox": [
+            6943725,
+            2028825,
+            990600,
+            209550
+          ]
+        },
+        {
+          "id": "23832",
+          "name": "Rectangle 280",
+          "kind": "rect",
+          "anchor": "V15:Z19",
+          "group": null,
+          "text": "企業情報登録確認\n【W11AA0202】",
+          "textbox": false,
+          "bbox": [
+            5800725,
+            2095500,
+            1104900,
+            571500
+          ]
+        },
+        {
+          "id": "23835",
+          "name": "Rectangle 283",
+          "kind": "rect",
+          "anchor": "AE15:AI19",
+          "group": null,
+          "text": "企業情報登録完了\n【W11AA0203】",
+          "textbox": false,
+          "bbox": [
+            8286750,
+            2095500,
+            1104900,
+            571500
+          ]
+        },
+        {
+          "id": "23836",
+          "name": "Text Box 284",
+          "kind": "rect",
+          "anchor": "AG19:AI21",
+          "group": null,
+          "text": "一覧照会へ",
+          "textbox": true,
+          "bbox": [
+            8839200,
+            2676525,
+            723900,
+            361950
+          ]
+        },
+        {
+          "id": "23838",
+          "name": "Text Box 286",
+          "kind": "rect",
+          "anchor": "G39:J41",
+          "group": null,
+          "text": "削除",
+          "textbox": true,
+          "bbox": [
+            1724025,
+            5562600,
+            990600,
+            304800
+          ]
+        },
+        {
+          "id": "23843",
+          "name": "Text Box 291",
+          "kind": "rect",
+          "anchor": "B15:G17",
+          "group": null,
+          "text": "企業情報登録",
+          "textbox": true,
+          "bbox": [
+            390525,
+            2162175,
+            1343025,
+            295275
+          ]
+        },
+        {
+          "id": "23934",
+          "name": "Oval 292",
+          "kind": "ellipse",
+          "anchor": "A16:B17",
+          "group": null,
+          "text": "",
+          "textbox": false,
+          "bbox": [
+            161925,
+            2324100,
+            114300,
+            114300
+          ]
+        },
+        {
+          "id": "23935",
+          "name": "Oval 293",
+          "kind": "ellipse",
+          "anchor": "A26:B27",
+          "group": null,
+          "text": "",
+          "textbox": false,
+          "bbox": [
+            161925,
+            3686175,
+            114300,
+            114300
+          ]
+        },
+        {
+          "id": "23851",
+          "name": "Text Box 299",
+          "kind": "rect",
+          "anchor": "A23:E26",
+          "group": null,
+          "text": "企業情報一覧\n照会",
+          "textbox": true,
+          "bbox": [
+            95250,
+            3200400,
+            1066800,
+            438150
+          ]
+        },
+        {
+          "id": "23871",
+          "name": "Rectangle 319",
+          "kind": "rect",
+          "anchor": "A7:W10",
+          "group": null,
+          "text": "・画面遷移図は機能単位にシートを分けて作成する。\n・サブウィンドウへの遷移がある場合の記述例は「2. 顧客情報管理(11AB)」シートを参照する。",
+          "textbox": false,
+          "bbox": [
+            180975,
+            1028700,
+            6057900,
+            409575
+          ]
+        },
+        {
+          "id": "128",
+          "name": "Rectangle 131",
+          "kind": "rect",
+          "anchor": "Q56:AH71",
+          "group": "127",
+          "text": "AAA\n【BBB】",
+          "textbox": false,
+          "bbox": [
+            4590102,
+            8806655,
+            706366,
+            391391
+          ]
+        },
+        {
+          "id": "129",
+          "name": "Rectangle 133",
+          "kind": "rect",
+          "anchor": "Q56:AH71",
+          "group": "127",
+          "text": "",
+          "textbox": false,
+          "bbox": [
+            4419600,
+            7905750,
+            4895850,
+            2152649
+          ]
+        },
+        {
+          "id": "130",
+          "name": "Text Box 134",
+          "kind": "rect",
+          "anchor": "Q56:AH71",
+          "group": "127",
+          "text": "【凡例】",
+          "textbox": true,
+          "bbox": [
+            4484553,
+            8028059,
+            649532,
+            212003
+          ]
+        },
+        {
+          "id": "142",
+          "name": "Text Box 138",
+          "kind": "rect",
+          "anchor": "Q56:AH71",
+          "group": "131",
+          "text": "CCC",
+          "textbox": true,
+          "bbox": [
+            7230234,
+            8272534,
+            349124,
+            171233
+          ]
+        },
+        {
+          "id": "132",
+          "name": "Text Box 139",
+          "kind": "rect",
+          "anchor": "Q56:AH71",
+          "group": "127",
+          "text": "表示画面\n(メインウィンドウ)を表す。\nAAA：画面名称\nBBB：画面ID",
+          "textbox": true,
+          "bbox": [
+            5369540,
+            8658226,
+            1455598,
+            702900
+          ]
+        },
+        {
+          "id": "133",
+          "name": "Text Box 141",
+          "kind": "rect",
+          "anchor": "Q56:AH71",
+          "group": "127",
+          "text": "画面遷移を表す。\nCCC：ボタン/リンク名",
+          "textbox": true,
+          "bbox": [
+            8138173,
+            8292955,
+            1161039,
+            350621
+          ]
+        },
+        {
+          "id": "134",
+          "name": "Oval 297",
+          "kind": "ellipse",
+          "anchor": "Q56:AH71",
+          "group": "127",
+          "text": "",
+          "textbox": false,
+          "bbox": [
+            4858034,
+            8350032,
+            170502,
+            171233
+          ]
+        },
+        {
+          "id": "135",
+          "name": "Text Box 298",
+          "kind": "rect",
+          "anchor": "Q56:AH71",
+          "group": "127",
+          "text": "トップ画面を表す。",
+          "textbox": true,
+          "bbox": [
+            5369541,
+            8374493,
+            1047371,
+            178957
+          ]
+        },
+        {
+          "id": "136",
+          "name": "AutoShape 304",
+          "kind": "roundRect",
+          "anchor": "Q56:AH71",
+          "group": "127",
+          "text": "",
+          "textbox": false,
+          "bbox": [
+            6944657,
+            8888195,
+            1079848,
+            301697
+          ]
+        },
+        {
+          "id": "137",
+          "name": "Rectangle 305",
+          "kind": "rect",
+          "anchor": "Q56:AH71",
+          "group": "127",
+          "text": "DDD/EEE",
+          "textbox": false,
+          "bbox": [
+            7269423,
+            8719631,
+            454673,
+            167194
+          ]
+        },
+        {
+          "id": "138",
+          "name": "Text Box 311",
+          "kind": "rect",
+          "anchor": "Q56:AH71",
+          "group": "127",
+          "text": "画面設計書の\n記載範囲。\nDDD：画面設計書ID\nEEE：画面設計書名",
+          "textbox": true,
+          "bbox": [
+            8138173,
+            8814809,
+            1136682,
+            691141
+          ]
+        },
+        {
+          "id": "139",
+          "name": "Rectangle 316",
+          "kind": "rect",
+          "anchor": "Q56:AH71",
+          "group": "127",
+          "text": "AAA\n【BBB】",
+          "textbox": false,
+          "bbox": [
+            4590102,
+            9352971,
+            706366,
+            391391
+          ]
+        },
+        {
+          "id": "140",
+          "name": "Text Box 317",
+          "kind": "rect",
+          "anchor": "Q56:AH71",
+          "group": "127",
+          "text": "表示画面(サブウィンドウ)を表す。\nAAA：画面名称\nBBB：画面ID",
+          "textbox": true,
+          "bbox": [
+            5369541,
+            9352971,
+            1428971,
+            676854
+          ]
+        },
+        {
+          "id": "81",
+          "name": "正方形/長方形 80",
+          "kind": "rect",
+          "anchor": "H23",
+          "group": null,
+          "text": "SAMPLE",
+          "textbox": false,
+          "bbox": [
+            2181225,
+            3238500,
+            5473999,
+            1871540
+          ]
+        },
+        {
+          "id": "82",
+          "name": "正方形/長方形 81",
+          "kind": "rect",
+          "anchor": "G57",
+          "group": null,
+          "text": "SAMPLE",
+          "textbox": false,
+          "bbox": [
+            1857375,
+            8086725,
+            5473999,
+            1871540
+          ]
+        }
+      ],
+      "connectors": [
+        {
+          "id": "23879",
+          "name": "AutoShape 250",
+          "kind": "straightConnector1",
+          "anchor": "Q38:V38",
+          "group": null,
+          "start": [
+            5800725,
+            5381625
+          ],
+          "end": [
+            4419600,
+            5381625
+          ],
+          "arrow_start": false,
+          "arrow_end": true,
+          "attached_start": null,
+          "attached_end": null,
+          "text": "",
+          "near_start": {
+            "shape": "23800",
+            "distance_pt": 0.0
+          },
+          "near_end": {
+            "shape": "23798",
+            "distance_pt": 0.0
+          }
+        },
+        {
+          "id": "23880",
+          "name": "AutoShape 249",
+          "kind": "straightConnector1",
+          "anchor": "Q36:V36",
+          "group": null,
+          "start": [
+            4419600,
+            5095875
+          ],
+          "end": [
+            5800725,
+            5095875
+          ],
+          "arrow_start": false,
+          "arrow_end": true,
+          "attached_start": null,
+          "attached_end": null,
+          "text": "",
+          "near_start": {
+            "shape": "23798",
+            "distance_pt": 0.0
+          },
+          "near_end": {
+            "shape": "23800",
+            "distance_pt": 0.0
+          }
+        },
+        {
+          "id": "23885",
+          "name": "AutoShape 251",
+          "kind": "straightConnector1",
+          "anchor": "Z36:AE36",
+          "group": null,
+          "start": [
+            6905625,
+            5095875
+          ],
+          "end": [
+            8286750,
+            5095875
+          ],
+          "arrow_start": false,
+          "arrow_end": true,
+          "attached_start": null,
+          "attached_end": null,
+          "text": "",
+          "near_start": {
+            "shape": "23800",
+            "distance_pt": 0.0
+          },
+          "near_end": {
+            "shape": "23818",
+            "distance_pt": 0.0
+          }
+        },
+        {
+          "id": "23892",
+          "name": "AutoShape 12",
+          "kind": "bentConnector4",
+          "anchor": "F22:H23",
+          "group": null,
+          "start": [
+            1962150,
+            3314700
+          ],
+          "end": [
+            1409700,
+            3095625
+          ],
+          "arrow_start": false,
+          "arrow_end": true,
+          "attached_start": null,
+          "attached_end": "23558",
+          "text": "",
+          "near_start": {
+            "shape": "23558",
+            "distance_pt": 1.5
+          },
+          "near_end": {
+            "shape": "23558",
+            "distance_pt": 0.0
+          }
+        },
+        {
+          "id": "23897",
+          "name": "AutoShape 39",
+          "kind": "bentConnector2",
+          "anchor": "H28:AG35",
+          "group": null,
+          "start": [
+            1933575,
+            3952875
+          ],
+          "end": [
+            8839200,
+            4953000
+          ],
+          "arrow_start": true,
+          "arrow_end": false,
+          "attached_start": null,
+          "attached_end": "23818",
+          "text": "",
+          "near_start": {
+            "shape": "23558",
+            "distance_pt": 0.8
+          },
+          "near_end": {
+            "shape": "23818",
+            "distance_pt": 0.0
+          }
+        },
+        {
+          "id": "23903",
+          "name": "AutoShape 238",
+          "kind": "bentConnector3",
+          "anchor": "H26:Z47",
+          "group": null,
+          "start": [
+            6915150,
+            6667500
+          ],
+          "end": [
+            1943100,
+            3743325
+          ],
+          "arrow_start": false,
+          "arrow_end": true,
+          "attached_start": null,
+          "attached_end": "23558",
+          "text": "",
+          "near_start": {
+            "shape": "23817",
+            "distance_pt": 0.8
+          },
+          "near_end": {
+            "shape": "23558",
+            "distance_pt": 0.0
+          }
+        },
+        {
+          "id": "23904",
+          "name": "AutoShape 239",
+          "kind": "bentConnector2",
+          "anchor": "H19:AG25",
+          "group": null,
+          "start": [
+            8839200,
+            2667000
+          ],
+          "end": [
+            1933576,
+            3524250
+          ],
+          "arrow_start": false,
+          "arrow_end": true,
+          "attached_start": "23835",
+          "attached_end": null,
+          "text": "",
+          "near_start": {
+            "shape": "23835",
+            "distance_pt": 0.0
+          },
+          "near_end": {
+            "shape": "23558",
+            "distance_pt": 0.7
+          }
+        },
+        {
+          "id": "23905",
+          "name": "AutoShape 242",
+          "kind": "straightConnector1",
+          "anchor": "E29:E35",
+          "group": null,
+          "start": [
+            1143000,
+            4953000
+          ],
+          "end": [
+            1143000,
+            4095750
+          ],
+          "arrow_start": false,
+          "arrow_end": true,
+          "attached_start": null,
+          "attached_end": null,
+          "text": "",
+          "near_start": {
+            "shape": "23579",
+            "distance_pt": 0.0
+          },
+          "near_end": {
+            "shape": "23558",
+            "distance_pt": 0.0
+          }
+        },
+        {
+          "id": "23906",
+          "name": "AutoShape 243",
+          "kind": "straightConnector1",
+          "anchor": "G29:G35",
+          "group": null,
+          "start": [
+            1695450,
+            4095750
+          ],
+          "end": [
+            1695450,
+            4953000
+          ],
+          "arrow_start": false,
+          "arrow_end": true,
+          "attached_start": null,
+          "attached_end": null,
+          "text": "",
+          "near_start": {
+            "shape": "23558",
+            "distance_pt": 0.0
+          },
+          "near_end": {
+            "shape": "23570",
+            "distance_pt": 0.0
+          }
+        },
+        {
+          "id": "23910",
+          "name": "AutoShape 261",
+          "kind": "straightConnector1",
+          "anchor": "Q47:V47",
+          "group": null,
+          "start": [
+            4419600,
+            6667500
+          ],
+          "end": [
+            5800725,
+            6667500
+          ],
+          "arrow_start": false,
+          "arrow_end": true,
+          "attached_start": null,
+          "attached_end": null,
+          "text": "",
+          "near_start": {
+            "shape": "23812",
+            "distance_pt": 0.0
+          },
+          "near_end": {
+            "shape": "23817",
+            "distance_pt": 0.0
+          }
+        },
+        {
+          "id": "23913",
+          "name": "AutoShape 264",
+          "kind": "bentConnector3",
+          "anchor": "E39:M49",
+          "group": null,
+          "start": [
+            3314700,
+            6953250
+          ],
+          "end": [
+            1143000,
+            5524500
+          ],
+          "arrow_start": false,
+          "arrow_end": true,
+          "attached_start": null,
+          "attached_end": null,
+          "text": "",
+          "near_start": {
+            "shape": "23812",
+            "distance_pt": 0.0
+          },
+          "near_end": {
+            "shape": "23570",
+            "distance_pt": 0.0
+          }
+        },
+        {
+          "id": "23920",
+          "name": "AutoShape 275",
+          "kind": "straightConnector1",
+          "anchor": "Q18:V18",
+          "group": null,
+          "start": [
+            5800725,
+            2524125
+          ],
+          "end": [
+            4419600,
+            2524125
+          ],
+          "arrow_start": false,
+          "arrow_end": true,
+          "attached_start": null,
+          "attached_end": null,
+          "text": "",
+          "near_start": {
+            "shape": "23832",
+            "distance_pt": 0.0
+          },
+          "near_end": {
+            "shape": "23826",
+            "distance_pt": 0.0
+          }
+        },
+        {
+          "id": "23921",
+          "name": "AutoShape 276",
+          "kind": "straightConnector1",
+          "anchor": "Q16:V16",
+          "group": null,
+          "start": [
+            4419600,
+            2238375
+          ],
+          "end": [
+            5800725,
+            2238375
+          ],
+          "arrow_start": false,
+          "arrow_end": true,
+          "attached_start": null,
+          "attached_end": null,
+          "text": "",
+          "near_start": {
+            "shape": "23826",
+            "distance_pt": 0.0
+          },
+          "near_end": {
+            "shape": "23832",
+            "distance_pt": 0.0
+          }
+        },
+        {
+          "id": "23926",
+          "name": "AutoShape 281",
+          "kind": "straightConnector1",
+          "anchor": "Z16:AE16",
+          "group": null,
+          "start": [
+            6905625,
+            2238375
+          ],
+          "end": [
+            8286750,
+            2238375
+          ],
+          "arrow_start": false,
+          "arrow_end": true,
+          "attached_start": null,
+          "attached_end": null,
+          "text": "",
+          "near_start": {
+            "shape": "23832",
+            "distance_pt": 0.0
+          },
+          "near_end": {
+            "shape": "23835",
+            "distance_pt": 0.0
+          }
+        },
+        {
+          "id": "23930",
+          "name": "AutoShape 285",
+          "kind": "bentConnector3",
+          "anchor": "G39:M47",
+          "group": null,
+          "start": [
+            1695450,
+            5524500
+          ],
+          "end": [
+            3314700,
+            6667500
+          ],
+          "arrow_start": false,
+          "arrow_end": true,
+          "attached_start": null,
+          "attached_end": null,
+          "text": "",
+          "near_start": {
+            "shape": "23570",
+            "distance_pt": 0.0
+          },
+          "near_end": {
+            "shape": "23812",
+            "distance_pt": 0.0
+          }
+        },
+        {
+          "id": "23932",
+          "name": "AutoShape 290",
+          "kind": "straightConnector1",
+          "anchor": "B17:M17",
+          "group": null,
+          "start": [
+            276225,
+            2381250
+          ],
+          "end": [
+            3314700,
+            2381250
+          ],
+          "arrow_start": false,
+          "arrow_end": true,
+          "attached_start": "23934",
+          "attached_end": "23826",
+          "text": "",
+          "near_start": {
+            "shape": "23934",
+            "distance_pt": 0.0
+          },
+          "near_end": {
+            "shape": "23826",
+            "distance_pt": 0.0
+          }
+        },
+        {
+          "id": "23936",
+          "name": "AutoShape 294",
+          "kind": "straightConnector1",
+          "anchor": "B26:D26",
+          "group": null,
+          "start": [
+            276225,
+            3743325
+          ],
+          "end": [
+            866775,
+            3743325
+          ],
+          "arrow_start": false,
+          "arrow_end": true,
+          "attached_start": "23935",
+          "attached_end": "23558",
+          "text": "",
+          "near_start": {
+            "shape": "23935",
+            "distance_pt": 0.0
+          },
+          "near_end": {
+            "shape": "23558",
+            "distance_pt": 0.0
+          }
+        },
+        {
+          "id": "23938",
+          "name": "AutoShape 302",
+          "kind": "straightConnector1",
+          "anchor": "H36:M36",
+          "group": null,
+          "start": [
+            1933575,
+            5095875
+          ],
+          "end": [
+            3314700,
+            5095875
+          ],
+          "arrow_start": false,
+          "arrow_end": true,
+          "attached_start": null,
+          "attached_end": null,
+          "text": "",
+          "near_start": {
+            "shape": "23570",
+            "distance_pt": 0.0
+          },
+          "near_end": {
+            "shape": "23798",
+            "distance_pt": 0.0
+          }
+        },
+        {
+          "id": "23939",
+          "name": "AutoShape 303",
+          "kind": "straightConnector1",
+          "anchor": "H38:M38",
+          "group": null,
+          "start": [
+            3314700,
+            5381625
+          ],
+          "end": [
+            1933575,
+            5381625
+          ],
+          "arrow_start": false,
+          "arrow_end": true,
+          "attached_start": null,
+          "attached_end": null,
+          "text": "",
+          "near_start": {
+            "shape": "23798",
+            "distance_pt": 0.0
+          },
+          "near_end": {
+            "shape": "23570",
+            "distance_pt": 0.0
+          }
+        },
+        {
+          "id": "141",
+          "name": "Line 137",
+          "kind": "line",
+          "anchor": "Q56:AH71",
+          "group": "131",
+          "start": [
+            7139517,
+            8439727
+          ],
+          "end": [
+            7715977,
+            8439727
+          ],
+          "arrow_start": false,
+          "arrow_end": true,
+          "attached_start": null,
+          "attached_end": null,
+          "text": "",
+          "near_start": {
+            "shape": "142",
+            "distance_pt": 7.1
+          },
+          "near_end": {
+            "shape": "142",
+            "distance_pt": 10.8
+          }
+        }
+      ],
+      "pictures": [],
+      "groups": [
+        {
+          "id": "127",
+          "name": "グループ化 126",
+          "bbox": [
+            4419600,
+            7905750,
+            4895850,
+            2152649
+          ]
+        },
+        {
+          "id": "131",
+          "name": "グループ化 130",
+          "bbox": [
+            7139517,
+            8272534,
+            576460,
+            171233
+          ]
+        }
+      ],
+      "unsupported": [],
+      "images": [
+        "figures/sheet-04-p1.png",
+        "figures/sheet-04-p2.png"
+      ]
+    },
+    {
+      "index": 5,
+      "name": "2. 顧客情報管理(11AB)",
+      "state": "visible",
+      "cells": [
+        {
+          "ref": "A1",
+          "row": 1,
+          "col": 1,
+          "end_col": 4,
+          "text": "PJ名",
+          "merge": "A1:D1",
+          "filled": true,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "E1",
+          "row": 1,
+          "col": 5,
+          "end_col": 14,
+          "text": "サンプルプロジェクト",
+          "merge": "E1:N1",
+          "filled": false,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "O1",
+          "row": 1,
+          "col": 15,
+          "end_col": 18,
+          "text": "成果物名",
+          "merge": "O1:R3",
+          "filled": true,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "S1",
+          "row": 1,
+          "col": 19,
+          "end_col": 26,
+          "text": "画面遷移図",
+          "merge": "S1:Z3",
+          "filled": false,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "AA1",
+          "row": 1,
+          "col": 27,
+          "end_col": 28,
+          "text": "作成",
+          "merge": "AA1:AB1",
+          "filled": true,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "AC1",
+          "row": 1,
+          "col": 29,
+          "end_col": 32,
+          "text": "TIS",
+          "merge": "AC1:AF1",
+          "filled": false,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "AG1",
+          "row": 1,
+          "col": 33,
+          "end_col": 35,
+          "text": "2018-08-24",
+          "merge": "AG1:AI1",
+          "filled": false,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "A2",
+          "row": 2,
+          "col": 1,
+          "end_col": 4,
+          "text": "システム名",
+          "merge": "A2:D2",
+          "filled": true,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "E2",
+          "row": 2,
+          "col": 5,
+          "end_col": 14,
+          "text": "サンプルシステム",
+          "merge": "E2:N2",
+          "filled": false,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "AA2",
+          "row": 2,
+          "col": 27,
+          "end_col": 28,
+          "text": "変更",
+          "merge": "AA2:AB2",
+          "filled": true,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "A3",
+          "row": 3,
+          "col": 1,
+          "end_col": 4,
+          "text": "サブシステム名",
+          "merge": "A3:D3",
+          "filled": true,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "E3",
+          "row": 3,
+          "col": 5,
+          "end_col": 14,
+          "text": "サンプルサブシステム",
+          "merge": "E3:N3",
+          "filled": false,
+          "header": "繰り返し"
+        },
+        {
+          "ref": "B7",
+          "row": 7,
+          "col": 2,
+          "end_col": 2,
+          "text": "2. 顧客情報管理(11AB)",
+          "merge": null,
+          "filled": false
+        }
+      ],
+      "blocks": [
+        {
+          "id": "s5-b1",
+          "kind": "table",
+          "range": "A1:AI3",
+          "first_row_is_header": false,
+          "rows": [
+            [
+              "A1",
+              "E1",
+              "O1",
+              "S1",
+              "AA1",
+              "AC1",
+              "AG1"
+            ],
+            [
+              "A2",
+              "E2",
+              "AA2"
+            ],
+            [
+              "A3",
+              "E3"
+            ]
+          ],
+          "common_header_of": "s2-b1",
+          "is_common_header": false
+        },
+        {
+          "id": "s5-b2",
+          "kind": "text",
+          "range": "B7:B7",
+          "first_row_is_header": false,
+          "rows": [
+            [
+              "B7"
+            ]
+          ],
+          "common_header_of": null,
+          "is_common_header": false
+        }
+      ],
+      "shapes": [
+        {
+          "id": "26743",
+          "name": "AutoShape 94",
+          "kind": "roundRect",
+          "anchor": "K22:V31",
+          "group": null,
+          "text": "",
+          "textbox": false,
+          "bbox": [
+            2838450,
+            2990850,
+            3228975,
+            1200150
+          ]
+        },
+        {
+          "id": "26744",
+          "name": "AutoShape 1",
+          "kind": "roundRect",
+          "anchor": "K10:AI20",
+          "group": null,
+          "text": "",
+          "textbox": false,
+          "bbox": [
+            2838450,
+            1257300,
+            6677025,
+            1457325
+          ]
+        },
+        {
+          "id": "26681",
+          "name": "Rectangle 57",
+          "kind": "rect",
+          "anchor": "T9:Z10",
+          "group": null,
+          "text": "SW11AB02/顧客情報登録",
+          "textbox": false,
+          "bbox": [
+            5419725,
+            1076325,
+            1485900,
+            209550
+          ]
+        },
+        {
+          "id": "26682",
+          "name": "Text Box 58",
+          "kind": "rect",
+          "anchor": "Q13:T15",
+          "group": null,
+          "text": "確認",
+          "textbox": true,
+          "bbox": [
+            4467225,
+            1704976,
+            904875,
+            221456
+          ]
+        },
+        {
+          "id": "26683",
+          "name": "Text Box 59",
+          "kind": "rect",
+          "anchor": "T17:W19",
+          "group": null,
+          "text": "戻る",
+          "textbox": true,
+          "bbox": [
+            5314950,
+            2200275,
+            762000,
+            314325
+          ]
+        },
+        {
+          "id": "26684",
+          "name": "Rectangle 60",
+          "kind": "rect",
+          "anchor": "M13:Q17",
+          "group": null,
+          "text": "顧客情報登録\n【W11AB0201】",
+          "textbox": false,
+          "bbox": [
+            3314700,
+            1743075,
+            1104900,
+            571500
+          ]
+        },
+        {
+          "id": "26688",
+          "name": "Text Box 64",
+          "kind": "rect",
+          "anchor": "Z13:AC15",
+          "group": null,
+          "text": "確定",
+          "textbox": true,
+          "bbox": [
+            6943725,
+            1695450,
+            990600,
+            228600
+          ]
+        },
+        {
+          "id": "26690",
+          "name": "Rectangle 66",
+          "kind": "rect",
+          "anchor": "V13:Z17",
+          "group": null,
+          "text": "顧客情報登録確認\n【W11AB0202】",
+          "textbox": false,
+          "bbox": [
+            5800725,
+            1743075,
+            1104900,
+            571500
+          ]
+        },
+        {
+          "id": "26693",
+          "name": "Rectangle 69",
+          "kind": "rect",
+          "anchor": "AE13:AI17",
+          "group": null,
+          "text": "顧客情報登録完了\n【W11AB0203】",
+          "textbox": false,
+          "bbox": [
+            8286750,
+            1743075,
+            1104900,
+            571500
+          ]
+        },
+        {
+          "id": "26694",
+          "name": "Text Box 70",
+          "kind": "rect",
+          "anchor": "AF17:AI20",
+          "group": null,
+          "text": "一覧照会へ",
+          "textbox": true,
+          "bbox": [
+            8782050,
+            2324100,
+            809625,
+            361950
+          ]
+        },
+        {
+          "id": "26698",
+          "name": "Text Box 74",
+          "kind": "rect",
+          "anchor": "C14:H16",
+          "group": null,
+          "text": "顧客情報登録",
+          "textbox": true,
+          "bbox": [
+            590550,
+            1838326,
+            1343025,
+            221456
+          ]
+        },
+        {
+          "id": "26761",
+          "name": "Oval 75",
+          "kind": "ellipse",
+          "anchor": "B15:B16",
+          "group": null,
+          "text": "",
+          "textbox": false,
+          "bbox": [
+            409575,
+            1971675,
+            114300,
+            114300
+          ]
+        },
+        {
+          "id": "26715",
+          "name": "Rectangle 91",
+          "kind": "rect",
+          "anchor": "M25:Q29",
+          "group": null,
+          "text": "住所情報検索\n【W91AA0101】",
+          "textbox": false,
+          "bbox": [
+            3314700,
+            3333750,
+            1104900,
+            571500
+          ]
+        },
+        {
+          "id": "26719",
+          "name": "Rectangle 95",
+          "kind": "rect",
+          "anchor": "P21:V22",
+          "group": null,
+          "text": "SW91AA01/住所情報検索",
+          "textbox": false,
+          "bbox": [
+            4143375,
+            2781300,
+            1685925,
+            209550
+          ]
+        },
+        {
+          "id": "26720",
+          "name": "Text Box 96",
+          "kind": "rect",
+          "anchor": "K18:O20",
+          "group": null,
+          "text": "住所検索",
+          "textbox": true,
+          "bbox": [
+            2971800,
+            2352675,
+            904875,
+            295275
+          ]
+        },
+        {
+          "id": "26721",
+          "name": "Text Box 97",
+          "kind": "rect",
+          "anchor": "P18:S20",
+          "group": null,
+          "text": "閉じる、選択",
+          "textbox": true,
+          "bbox": [
+            4171950,
+            2371725,
+            904875,
+            295275
+          ]
+        },
+        {
+          "id": "43",
+          "name": "Text Box 58",
+          "kind": "rect",
+          "anchor": "A4:L6",
+          "group": null,
+          "text": "サブウィンドウへの遷移サンプル",
+          "textbox": true,
+          "bbox": [
+            180975,
+            542925,
+            3019425,
+            333375
+          ]
+        },
+        {
+          "id": "135",
+          "name": "Rectangle 131",
+          "kind": "rect",
+          "anchor": "Q41:T44",
+          "group": null,
+          "text": "AAA\n【BBB】",
+          "textbox": false,
+          "bbox": [
+            4590102,
+            5825330,
+            706366,
+            391391
+          ]
+        },
+        {
+          "id": "136",
+          "name": "Rectangle 133",
+          "kind": "rect",
+          "anchor": "Q35:AH50",
+          "group": null,
+          "text": "",
+          "textbox": false,
+          "bbox": [
+            4419600,
+            4924425,
+            4895850,
+            2152649
+          ]
+        },
+        {
+          "id": "137",
+          "name": "Text Box 134",
+          "kind": "rect",
+          "anchor": "Q35:S37",
+          "group": null,
+          "text": "【凡例】",
+          "textbox": true,
+          "bbox": [
+            4484553,
+            5046734,
+            649532,
+            212003
+          ]
+        },
+        {
+          "id": "140",
+          "name": "Text Box 138",
+          "kind": "rect",
+          "anchor": "Z37:AB38",
+          "group": "138",
+          "text": "CCC",
+          "textbox": true,
+          "bbox": [
+            7220709,
+            5291209,
+            349124,
+            171233
+          ]
+        },
+        {
+          "id": "141",
+          "name": "Text Box 139",
+          "kind": "rect",
+          "anchor": "T40:Y45",
+          "group": null,
+          "text": "表示画面\n(メインウィンドウ)を表す。\nAAA：画面名称\nBBB：画面ID",
+          "textbox": true,
+          "bbox": [
+            5369540,
+            5676901,
+            1455598,
+            702900
+          ]
+        },
+        {
+          "id": "142",
+          "name": "Text Box 141",
+          "kind": "rect",
+          "anchor": "AD37:AH40",
+          "group": null,
+          "text": "画面遷移を表す。\nCCC：ボタン/リンク名",
+          "textbox": true,
+          "bbox": [
+            8138173,
+            5311630,
+            1161039,
+            350621
+          ]
+        },
+        {
+          "id": "143",
+          "name": "Oval 297",
+          "kind": "ellipse",
+          "anchor": "R38:S39",
+          "group": null,
+          "text": "",
+          "textbox": false,
+          "bbox": [
+            4858034,
+            5368707,
+            170502,
+            171233
+          ]
+        },
+        {
+          "id": "144",
+          "name": "Text Box 298",
+          "kind": "rect",
+          "anchor": "T38:X39",
+          "group": null,
+          "text": "トップ画面を表す。",
+          "textbox": true,
+          "bbox": [
+            5369541,
+            5393168,
+            1047371,
+            178957
+          ]
+        },
+        {
+          "id": "145",
+          "name": "AutoShape 304",
+          "kind": "roundRect",
+          "anchor": "Z41:AD43",
+          "group": null,
+          "text": "",
+          "textbox": false,
+          "bbox": [
+            6944657,
+            5906870,
+            1079848,
+            301697
+          ]
+        },
+        {
+          "id": "146",
+          "name": "Rectangle 305",
+          "kind": "rect",
+          "anchor": "AA40:AB41",
+          "group": null,
+          "text": "DDD/EEE",
+          "textbox": false,
+          "bbox": [
+            7269423,
+            5738306,
+            454673,
+            167194
+          ]
+        },
+        {
+          "id": "147",
+          "name": "Text Box 311",
+          "kind": "rect",
+          "anchor": "AD41:AH46",
+          "group": null,
+          "text": "画面設計書の\n記載範囲。\nDDD：画面設計書ID\nEEE：画面設計書名",
+          "textbox": true,
+          "bbox": [
+            8138173,
+            5833484,
+            1136682,
+            691141
+          ]
+        },
+        {
+          "id": "148",
+          "name": "Rectangle 316",
+          "kind": "rect",
+          "anchor": "Q45:T47",
+          "group": null,
+          "text": "AAA\n【BBB】",
+          "textbox": false,
+          "bbox": [
+            4590102,
+            6371646,
+            706366,
+            391391
+          ]
+        },
+        {
+          "id": "149",
+          "name": "Text Box 317",
+          "kind": "rect",
+          "anchor": "T45:Y49",
+          "group": null,
+          "text": "表示画面(サブウィンドウ)を表す。\nAAA：画面名称\nBBB：画面ID",
+          "textbox": true,
+          "bbox": [
+            5369541,
+            6371646,
+            1428971,
+            676854
+          ]
+        },
+        {
+          "id": "41",
+          "name": "正方形/長方形 40",
+          "kind": "rect",
+          "anchor": "H20",
+          "group": null,
+          "text": "SAMPLE",
+          "textbox": false,
+          "bbox": [
+            1943100,
+            2781300,
+            5473999,
+            1871540
+          ]
+        }
+      ],
+      "connectors": [
+        {
+          "id": "26749",
+          "name": "AutoShape 61",
+          "kind": "straightConnector1",
+          "anchor": "Q16:V16",
+          "group": null,
+          "start": [
+            5800725,
+            2171700
+          ],
+          "end": [
+            4419600,
+            2171700
+          ],
+          "arrow_start": false,
+          "arrow_end": true,
+          "attached_start": null,
+          "attached_end": null,
+          "text": "",
+          "near_start": {
+            "shape": "26690",
+            "distance_pt": 0.0
+          },
+          "near_end": {
+            "shape": "26684",
+            "distance_pt": 0.0
+          }
+        },
+        {
+          "id": "26750",
+          "name": "AutoShape 62",
+          "kind": "straightConnector1",
+          "anchor": "Q14:V14",
+          "group": null,
+          "start": [
+            4419600,
+            1885950
+          ],
+          "end": [
+            5800725,
+            1885950
+          ],
+          "arrow_start": false,
+          "arrow_end": true,
+          "attached_start": null,
+          "attached_end": null,
+          "text": "",
+          "near_start": {
+            "shape": "26684",
+            "distance_pt": 0.0
+          },
+          "near_end": {
+            "shape": "26690",
+            "distance_pt": 0.0
+          }
+        },
+        {
+          "id": "26755",
+          "name": "AutoShape 67",
+          "kind": "straightConnector1",
+          "anchor": "Z14:AE14",
+          "group": null,
+          "start": [
+            6905625,
+            1885950
+          ],
+          "end": [
+            8286750,
+            1885950
+          ],
+          "arrow_start": false,
+          "arrow_end": true,
+          "attached_start": null,
+          "attached_end": null,
+          "text": "",
+          "near_start": {
+            "shape": "26690",
+            "distance_pt": 0.0
+          },
+          "near_end": {
+            "shape": "26693",
+            "distance_pt": 0.0
+          }
+        },
+        {
+          "id": "26759",
+          "name": "AutoShape 73",
+          "kind": "straightConnector1",
+          "anchor": "B15:M15",
+          "group": null,
+          "start": [
+            523875,
+            2028825
+          ],
+          "end": [
+            3314700,
+            2028825
+          ],
+          "arrow_start": false,
+          "arrow_end": true,
+          "attached_start": "26761",
+          "attached_end": "26684",
+          "text": "",
+          "near_start": {
+            "shape": "26761",
+            "distance_pt": 0.0
+          },
+          "near_end": {
+            "shape": "26684",
+            "distance_pt": 0.0
+          }
+        },
+        {
+          "id": "26763",
+          "name": "Line 92",
+          "kind": "line",
+          "anchor": "N17:N25",
+          "group": null,
+          "start": [
+            3657600,
+            2324100
+          ],
+          "end": [
+            3657600,
+            3333750
+          ],
+          "arrow_start": false,
+          "arrow_end": true,
+          "attached_start": null,
+          "attached_end": null,
+          "text": "",
+          "near_start": {
+            "shape": "26684",
+            "distance_pt": 0.8
+          },
+          "near_end": {
+            "shape": "26715",
+            "distance_pt": 0.0
+          }
+        },
+        {
+          "id": "26764",
+          "name": "Line 93",
+          "kind": "line",
+          "anchor": "O17:O24",
+          "group": null,
+          "start": [
+            4086225,
+            3324225
+          ],
+          "end": [
+            4086225,
+            2314575
+          ],
+          "arrow_start": false,
+          "arrow_end": true,
+          "attached_start": null,
+          "attached_end": null,
+          "text": "",
+          "near_start": {
+            "shape": "26715",
+            "distance_pt": 0.8
+          },
+          "near_end": {
+            "shape": "26684",
+            "distance_pt": 0.0
+          }
+        },
+        {
+          "id": "139",
+          "name": "Line 137",
+          "kind": "line",
+          "anchor": "Z37:AB38",
+          "group": "138",
+          "start": [
+            7139517,
+            5458402
+          ],
+          "end": [
+            7715977,
+            5458402
+          ],
+          "arrow_start": false,
+          "arrow_end": true,
+          "attached_start": null,
+          "attached_end": null,
+          "text": "",
+          "near_start": {
+            "shape": "140",
+            "distance_pt": 6.4
+          },
+          "near_end": {
+            "shape": "140",
+            "distance_pt": 11.5
+          }
+        }
+      ],
+      "pictures": [],
+      "groups": [
+        {
+          "id": "138",
+          "name": "グループ化 137",
+          "bbox": [
+            7139517,
+            5291209,
+            576460,
+            171233
+          ]
+        }
+      ],
+      "unsupported": [],
+      "images": [
+        "figures/sheet-05-p1.png"
+      ]
+    }
+  ]
+}

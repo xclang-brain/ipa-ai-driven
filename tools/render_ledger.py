@@ -1,7 +1,7 @@
 """要求管理台帳（requirements/requirements.yaml）から、人が読むための一覧を出力する。
 
 使い方:
-    pip install -r requirements-dev.txt
+    pip install -e ".[dev]"
     python tools/render_ledger.py
 
 台帳が正本であり、出力された docs/requirements.md は直接編集しない。
