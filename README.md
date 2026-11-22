@@ -184,7 +184,7 @@ python -m docmig verify migrated/trial-01
 
 ## 使ってよい範囲
 
-この道具は、誰でも自由に使えます。`samples/` のサンプルの設計書だけは別で、[samples/nablarch/README.md](samples/nablarch/README.md) に書かれたライセンスに従います。
+この道具は、誰でも、条件なしで自由に使えます（[Unlicense](LICENSE)）。`samples/` のサンプルの設計書だけは別で、[samples/nablarch/README.md](samples/nablarch/README.md) に書かれたライセンスに従います。
 
 ## 問い合わせ
 
