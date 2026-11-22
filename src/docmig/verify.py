@@ -30,6 +30,46 @@ def _figure_strings(sheet: dict) -> list[tuple[str, dict]]:
     ]
 
 
+def _line_ends(sheet: dict) -> list[tuple[str, str, bool]]:
+    """原本の線ごとの (始点の図形, 終点の図形, 向きがあるか)。
+
+    端点の図形は、ファイルに接続の記録があればその図形、なければ位置から求めた候補とする。
+    """
+    lines = []
+    for line in sheet["connectors"]:
+        start = line.get("attached_start") or (line.get("near_start") or {}).get("shape")
+        end = line.get("attached_end") or (line.get("near_end") or {}).get("shape")
+        start, end = f"s{start}", f"s{end}"
+        if line["arrow_end"] and not line["arrow_start"]:
+            lines.append((start, end, True))
+        elif line["arrow_start"] and not line["arrow_end"]:
+            lines.append((end, start, True))
+        else:
+            lines.append((start, end, False))
+    return lines
+
+
+def unmatched_arrows(arrows: list[tuple[str, str, bool]], sheet: dict) -> list[tuple[str, str, bool]]:
+    """Mermaid の矢印のうち、原本のどの線にも対応しないもの（FR-017）。
+
+    原本の線1本は、矢印1本にだけ対応させる。向きのある線には、同じ向きの矢印だけが対応する。
+    向きのない線（矢じりが両端にある、またはない）には、どちら向きの矢印も対応する。
+    """
+    lines = _line_ends(sheet)
+    unmatched = []
+    for arrow in arrows:
+        start, end, directed = arrow
+        for index, (line_start, line_end, line_directed) in enumerate(lines):
+            same = (start, end) == (line_start, line_end)
+            opposite = (start, end) == (line_end, line_start)
+            if (line_directed and directed and same) or (not line_directed and (same or opposite)):
+                del lines[index]
+                break
+        else:
+            unmatched.append(arrow)
+    return unmatched
+
+
 def verify(markdown: str, extract: dict, source: Path | None = None) -> dict:
     """文書を検査し、結果を返す。errors が空なら合格。"""
     errors: list[dict] = []
@@ -66,6 +106,10 @@ def verify(markdown: str, extract: dict, source: Path | None = None) -> dict:
             continue
         for item in consume_all(body_text(figure.body), _figure_strings(sheet)):
             errors.append({"kind": "図の文字の欠落", "figure": figure.id, **item})
+        # 原本にない矢印（FR-017）
+        for start, end, directed in unmatched_arrows(figure.arrows, sheet):
+            detail = f"{start} から {end} への矢印" if directed else f"{start} と {end} を結ぶ線"
+            errors.append({"kind": "原本にない矢印", "detail": detail, "figure": figure.id, "sheet": sheet["name"]})
 
     # 確認の状態（FR-009）と要確認の印（FR-013）
     status = attributes.get("review_status")

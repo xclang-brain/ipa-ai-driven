@@ -21,7 +21,7 @@ flowchart TD
         render["描画<br>FR-006"]
         draft["下書きの生成<br>FR-007、FR-008"]
         figure["図のデータの出力<br>FR-014"]
-        verify["検査<br>FR-009〜013"]
+        verify["検査<br>FR-009〜013、FR-017"]
     end
     subgraph ai["AI（Copilot CLI）"]
         transcribe["図の書き起こし<br>FR-014"]

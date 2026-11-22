@@ -8,7 +8,7 @@
 |---|---|---|---|
 | REQ-001 | 既存ドキュメントの移行 | Must | FR-001、FR-007 |
 | REQ-002 | 表の移行 | Must | FR-001、FR-002、FR-007 |
-| REQ-003 | 図形で描かれた図の移行 | Must | FR-003、FR-004、FR-006、FR-012、FR-014 |
+| REQ-003 | 図形で描かれた図の移行 | Must | FR-003、FR-004、FR-006、FR-012、FR-014、FR-017 |
 | REQ-004 | 貼り付け画像の移行 | Should | FR-005 |
 | REQ-005 | 移行後の文書を正本とする | Must | FR-007 |
 | REQ-006 | 使う AI は GitHub Copilot のみ | Must | FR-014、NFR-001 |
@@ -17,7 +17,7 @@
 | REQ-009 | AI によるテストの作成 | Should | なし（移行した文書ができてから取り組む） |
 | REQ-010 | AI による仕様とコードの整合確認 | Should | なし（移行した文書ができてから取り組む） |
 | REQ-011 | 環境整備の期間短縮 | Should | なし（要件にはせず、移行にかかる人の作業時間を記録して評価する（成功の基準 S-4）） |
-| REQ-012 | 原本との一致の確認 | Must | FR-010、FR-011、FR-012、FR-015、NFR-003 |
+| REQ-012 | 原本との一致の確認 | Must | FR-010、FR-011、FR-012、FR-015、FR-017、NFR-003 |
 | REQ-013 | 原本の箇所への追跡 | Must | FR-001、FR-003、FR-008、FR-016 |
 | REQ-014 | 図の編集 | Must | FR-014 |
 | REQ-015 | 原本の保管 | Should | FR-010 |
@@ -49,6 +49,7 @@
 | FR-014 | 図を書き起こすエージェント | REQ-003、REQ-006、REQ-014、REQ-021 | 自動テスト（一覧）、レビュー、依頼者環境 | 実装済み | `test_render_and_cli.py::test_fr014_figure_data_lists_shapes_and_arrow_candidates` |
 | FR-015 | 確認するエージェント | REQ-017、REQ-012 | レビュー、依頼者環境 | 実装済み | なし |
 | FR-016 | 移行後の文書の使い方の案内 | REQ-008、REQ-013 | レビュー、依頼者環境 | 実装済み | なし |
+| FR-017 | 原本にない矢印の検出 | REQ-003、REQ-012 | 自動テスト | 検証済み | `test_draft_and_verify.py::test_fr017_arrows_that_match_the_original_lines_pass`<br>`test_draft_and_verify.py::test_fr017_arrow_without_an_original_line_is_reported`<br>`test_draft_and_verify.py::test_fr017_reversed_arrow_is_reported`<br>`test_draft_and_verify.py::test_fr017_second_arrow_for_the_same_line_is_reported`<br>`test_draft_and_verify.py::test_fr017_line_without_arrowheads_matches_either_direction`<br>`test_draft_and_verify.py::test_fr017_arrow_notations_are_read`<br>`test_draft_and_verify.py::test_fr017_sample_transcription_passes` |
 | NFR-001 | 外部と通信しない | REQ-006 | 自動テスト | 検証済み | `test_render_and_cli.py::test_nfr001_tool_does_not_use_network_libraries` |
 | NFR-002 | 動作環境 | REQ-019 | 自動テスト（Linux）、依頼者環境（Windows） | 実装済み | `test_render_and_cli.py::test_nfr002_migration_and_verification_run_without_office` |
 | NFR-003 | 結果の再現性 | REQ-012 | 自動テスト | 検証済み | `test_extract.py::test_nfr003_same_source_gives_the_same_result` |
