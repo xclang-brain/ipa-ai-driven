@@ -23,6 +23,25 @@
 | エージェントの定義 | 試行のあとに書き直した。書き直したあとの定義では、まだ試行していない |
 | Copilot CLI での試行 | クラウドの開発環境で、手順3から5を gpt-4.1 で行った。仕組みは動いたが、結果は定義のとおりでなかった（[要求評価](07-evaluation.md) の 3.3）。出力は `migrated/trial-cloud-01/` |
 
+### 工程ごとの進み具合
+
+ハンドブックの12の工程ごとの状態を示す。
+
+| 工程 | 成果物 | 状態 |
+|---|---|---|
+| 1. 目的・ミッションの確認 | [docs/01-purpose.md](01-purpose.md) | 暫定版。リスクの候補は依頼者の確認待ち |
+| 2. ステークホルダーの特定 | [docs/02-stakeholders.md](02-stakeholders.md) | 暫定版。依頼者以外は想定で、確認待ち |
+| 3. 要求獲得 | [docs/03-hearing-001.md](03-hearing-001.md)、[docs/03-hearing-002.md](03-hearing-002.md) | 第2回まで実施 |
+| 4. 要求分析 | [docs/04-analysis.md](04-analysis.md)、[要求管理台帳](../requirements/requirements.yaml)（一覧は [docs/requirements.md](requirements.md)） | 依頼者が合意済み |
+| 5. 要求仕様化 | [docs/05-specification.md](05-specification.md)、[要件台帳](../requirements/system-requirements.yaml)（一覧は [docs/system-requirements.md](system-requirements.md)） | 初回の範囲を定義済み |
+| 6. モデリング | [docs/06-model.md](06-model.md) | 作成済み |
+| 7. 要求評価・妥当性確認 | [docs/07-evaluation.md](07-evaluation.md) | 開発環境での評価まで。依頼者の環境での確認が残っている |
+| 8. 要求ベースライン化 | 要求管理台帳の版 1.0（その後の変更を含めた現在の版は 1.1） | 設定済み |
+| 9. 実現手段への接続 | `src/docmig/`、`tests/`、`.github/agents/`、[docs/traceability.md](traceability.md)、[docs/runbook.md](runbook.md) | プログラムは実装とテスト済み。Copilot CLI を使う部分は、開発環境で一度試した。依頼者の環境では未確認 |
+| 10. 運用・監視 | 未着手 | 依頼者の実際の文書を移行し始めるときに着手する |
+| 11. フィードバック・変更管理 | [docs/change-log.md](change-log.md) | ベースラインのあとの変更を記録している |
+| 12. 廃止・移行 | 未着手 | 原本を正本でなくすときに着手する |
+
 ## 3. 次に行うこと
 
 Copilot CLI が使える環境で、上から順に行う。手順は [runbook.md](runbook.md) にある。結果は [process.md](process.md) の 3.5 に従って記録する。

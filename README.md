@@ -1,103 +1,136 @@
 # ipa-ai-driven
 
-Word や Excel で書かれた設計書を、AI が読める文章（Markdown）に作り直すための道具と、その開発の記録です。
+Word や Excel で書かれた設計書を、AI（GitHub Copilot）が読める文書に作り直すための道具です。
 
-## 何に困っていて、何をするのか
+**開発の途中です。まだ業務には使えません。** 公開されているサンプルの設計書で、動作を確かめている段階です。
 
-設計書の多くは Word と Excel で書かれています。GitHub Copilot などの AI は、これらのファイルをそのままでは読めません。既存の変換ツールを使うと、図形で描いた図（画面遷移図など）が消えてしまいます。
+## 何のためのものか
 
-このリポジトリの道具は、図を文字で書いた図（Mermaid）に置き換えて、内容を落とさずに Markdown へ移します。
+ファームウェア開発部門には、Word と Excel で書かれた設計書がたくさんあります。開発を手伝う AI にこれらを読ませたいのですが、次の問題があります。
 
-| 原本にあるもの | 移し方 |
-|---|---|
-| 文章と表 | プログラムが取り出す |
-| 図形で描いた図 | AI（GitHub Copilot）が Mermaid に書き起こす |
-| 移したあとの確認 | プログラムが原本と照合し、AI がもう一度見比べ、最後に人が承認する |
+- AI は、Word や Excel のファイルをそのままではうまく読めない。
+- 既存の変換ツールを使うと、四角や矢印で描いた図が消えてしまう。
 
-たとえば、Excel の図形で描かれた画面遷移図は、次のような文字の図になります。
+この道具は、設計書を「文字だけのファイル」に作り直します。図は、文字で書いた図に置き換えるので、消えません。
 
-```mermaid
-flowchart LR
-    s1["顧客情報登録"] -->|"確認"| s2["顧客情報登録確認"]
-    s2 -->|"戻る"| s1
-    s2 -->|"確定"| s3["顧客情報登録完了"]
+### 変換の例
+
+変換前。Excel に、四角と矢印で描かれた図です（画面の移り変わりを表す図）。
+
+<img src="migrated/screen-transition/figures/sheet-05-p1.png" width="560" alt="Excel に四角と矢印で描かれた、画面の移り変わりの図">
+
+変換後。同じ図を、文字で書いたものです（一部を抜き出しています）。「A から B へ、『確認』というボタンで移る」という関係が、1行ずつ書かれています。AI はこの形なら読めます。
+
+```
+s26684["顧客情報登録"]
+s26690["顧客情報登録確認"]
+s26693["顧客情報登録完了"]
+s26684 -->|"確認"| s26690
+s26690 -->|"戻る"| s26684
+s26690 -->|"確定"| s26693
 ```
 
-移行した文書の実例は [migrated/screen-transition/document.md](migrated/screen-transition/document.md) にあります。
+変換した文書の全体は [migrated/screen-transition/document.md](migrated/screen-transition/document.md) で見られます。
 
-## 今できること、まだできないこと
+## 誰が使うものか
 
-開発の途中です。実際の業務にはまだ使えません。
-
-| 項目 | 状態 |
+| 読んでいる人 | この先の読み方 |
 |---|---|
-| Excel の文書の文章と表を取り出す | できる |
-| 移行後の文書を原本と照合する | できる |
-| 図を Copilot に書き起こさせる | 仕組みは動いた。精度は確認の途中 |
-| Word の文書 | まだできない |
-| 貼り付けた画像の中の文字 | まだできない |
-| 実際の設計書での確認 | まだ。公開されているサンプルだけで試している |
+| どんな道具かを知りたい人 | 次の「今の状態」と「変換の流れ」まで読めば足ります |
+| 自分の手元で動かしてみたい人 | 「動かしてみる」を読んでください |
+| この道具の開発に加わる人、作業する AI | 「開発に加わる人へ」を読んでください |
 
-詳しい状態と、次に行うことは [docs/handoff.md](docs/handoff.md) にあります。
+## 今の状態
 
-## 試してみる
+| できること | 状態 |
+|---|---|
+| Excel の設計書から、文章と表を取り出す | できる |
+| 変換後の文書に抜けがないかを、変換前と比べて調べる | できる |
+| 図を AI に文字で書き直させる | 動くが、精度を確かめている途中 |
+| Word の設計書を変換する | まだできない |
+| 貼り付けた画像の中の文字を読む | まだできない |
+| 実際の業務の設計書で使う | まだ試していない |
 
-Python 3.10 以上が必要です。図の画像を作るには、Excel（Windows）か LibreOffice が要ります。
+次に行うことは [docs/handoff.md](docs/handoff.md) にあります。
+
+## 変換の流れ
+
+変換は、プログラム、AI、人が分担します。AI は書き間違えることがあるため、AI に任せるのは図だけにして、結果をプログラムと人が確かめます。
+
+1. **プログラム**が、設計書から文章と表を取り出し、下書きを作る。図は画像として保存する。
+2. **AI（GitHub Copilot）**が、図の画像を見て、文字で書いた図に書き直す。
+3. **プログラム**が、変換前の文字がすべて変換後に残っているかを調べる。
+4. **別の AI**が、変換前の図と変換後の図を見比べる。
+5. **人**が最後に確かめて、承認する。
+
+## 動かしてみる
+
+手順1のプログラム（下書きを作る）と、手順3のプログラム（抜けを調べる）を、サンプルの設計書で試せます。
+
+必要なもの:
+
+- Python 3.10 以上
+- Excel（Windows）か LibreOffice のどちらか。図を画像にするために使います
+
+このリポジトリを手元に置き、そのフォルダで次を実行します。
 
 ```
 pip install -e ".[excel,dev]"
 python -m docmig migrate "samples/nablarch/画面遷移図_サンプル.xlsx" --out migrated/trial-01
+```
+
+`docmig` は、この道具のプログラムの名前です。成功すると、次のように表示され、`migrated/trial-01/` に下書き（`document.md`）と図の画像ができます。
+
+```
+下書きを作成: migrated/trial-01/document.md（シート 5、図 5）
+```
+
+続けて、抜けを調べます。
+
+```
 python -m docmig verify migrated/trial-01
 ```
 
-- 2行目で、`migrated/trial-01/` に下書き（`document.md`）と図の画像ができます。
-- 3行目で、原本と照合します。この時点では、図をまだ書き起こしていないため「不合格」と表示されます。
-- 図の書き起こしから承認までの手順は [docs/runbook.md](docs/runbook.md) にあります。
-
-サンプルは、公開されている「[Nablarch 開発標準](https://github.com/nablarch-development-standards/nablarch-development-standards)」の設計書です（クリエイティブ・コモンズ 表示 - 継承 4.0 国際）。
-
-## フォルダの見方
-
-| 場所 | 内容 |
-|---|---|
-| `migrated/` | 移行した文書。仕様を調べるときはここを読む |
-| `samples/` | 試すための原本（Excel） |
-| `src/docmig/` | 移行の道具のプログラム |
-| `.github/agents/` | 図の書き起こしと確認を Copilot に任せるための指示 |
-| `docs/` | 開発の記録（目的、聞き取り、要求、仕様、評価） |
-| `requirements/` | 要求と要件の台帳 |
-
-## 開発に参加する人へ
-
-開発は、IPA「[AI時代の要求管理ハンドブック](https://www.ipa.go.jp/digital/kaihatsu/rqr7mi000000f5up-att/req-mgmt-hb.pdf)」Version 1.0.0 に沿って進めています。依頼された内容をすぐに実装せず、目的、要求、要件を台帳に書いてから作ります。
-
-| 最初に読む文書 | 内容 |
-|---|---|
-| [docs/process.md](docs/process.md) | 開発の進め方と決まり |
-| [docs/handoff.md](docs/handoff.md) | 今の状態と、次に行うこと |
-| [docs/handbook-summary.md](docs/handbook-summary.md) | ハンドブックの要点 |
-| [AGENTS.md](AGENTS.md) | 作業する AI への案内 |
-
-要求は `requirements/requirements.yaml`、要件は `requirements/system-requirements.yaml` が正本です。`docs/requirements.md`、`docs/system-requirements.md`、`docs/traceability.md` は次のコマンドで出力したもので、直接は編集しません。
+この時点では、図をまだ書き直していないので、次のように「不合格」と表示されます。これは正しい動きです。
 
 ```
-pytest
-python tools/render_ledger.py
+判定: 不合格
+図: 5 件中、未記入 5 件
 ```
 
-### 工程ごとの進み具合
+図を AI に書き直させて承認するまでの手順（手順2、4、5）は、[docs/runbook.md](docs/runbook.md) にあります。GitHub Copilot の契約と、Copilot CLI（コマンドで Copilot を使う道具）が必要です。
 
-| 工程 | 成果物 | 状態 |
-|---|---|---|
-| 1. 目的・ミッションの確認 | [docs/01-purpose.md](docs/01-purpose.md) | 暫定版。リスクの候補は依頼者の確認待ち |
-| 2. ステークホルダーの特定 | [docs/02-stakeholders.md](docs/02-stakeholders.md) | 暫定版。依頼者以外は想定で、確認待ち |
-| 3. 要求獲得 | [docs/03-hearing-001.md](docs/03-hearing-001.md)、[docs/03-hearing-002.md](docs/03-hearing-002.md) | 第2回まで実施 |
-| 4. 要求分析 | [docs/04-analysis.md](docs/04-analysis.md)、[要求管理台帳](requirements/requirements.yaml)（一覧は [docs/requirements.md](docs/requirements.md)） | 依頼者が合意済み |
-| 5. 要求仕様化 | [docs/05-specification.md](docs/05-specification.md)、[要件台帳](requirements/system-requirements.yaml)（一覧は [docs/system-requirements.md](docs/system-requirements.md)） | 初回の範囲を定義済み |
-| 6. モデリング | [docs/06-model.md](docs/06-model.md) | 作成済み |
-| 7. 要求評価・妥当性確認 | [docs/07-evaluation.md](docs/07-evaluation.md) | 開発環境での評価まで。依頼者の環境での確認が残っている |
-| 8. 要求ベースライン化 | 要求管理台帳の版 1.0（その後の変更を含めた現在の版は 1.1） | 設定済み |
-| 9. 実現手段への接続 | `src/docmig/`、`tests/`、`.github/agents/`、[docs/traceability.md](docs/traceability.md)、[docs/runbook.md](docs/runbook.md) | プログラムは実装とテスト済み。Copilot CLI を使う部分は、開発環境で一度試した。依頼者の環境では未確認 |
-| 10. 運用・監視 | 未着手 | 依頼者の実際の文書を移行し始めるときに着手する |
-| 11. フィードバック・変更管理 | [docs/change-log.md](docs/change-log.md) | ベースラインのあとの変更を記録している |
-| 12. 廃止・移行 | 未着手 | 原本を正本でなくすときに着手する |
+## 言葉の説明
+
+| 言葉 | 意味 |
+|---|---|
+| GitHub Copilot | GitHub が提供する、開発を手伝う AI |
+| Markdown | 見出しや表を簡単な記号で書く、文字だけのファイルの形式。拡張子は `.md`。変換後の文書はこの形式で作る |
+| Mermaid | 図を文字で書くための書き方。GitHub で開くと、図として表示される |
+| 原本 | 変換前の Word や Excel のファイル |
+| 移行 | 原本を Markdown の文書に作り直し、以後はそちらを使うようにすること |
+
+## フォルダの中身
+
+| 場所 | 中身 |
+|---|---|
+| `samples/` | 試すための設計書（Excel）。公開されている「[Nablarch 開発標準](https://github.com/nablarch-development-standards/nablarch-development-standards)」のサンプルで、ライセンスはクリエイティブ・コモンズ 表示 - 継承 4.0 国際 |
+| `migrated/` | 変換した文書 |
+| `src/docmig/` | 変換のプログラム |
+| `.github/agents/` | 図の書き直しと見比べを AI に任せるための指示書 |
+| `docs/` | 開発の記録 |
+| `requirements/` | この道具に求めることの一覧 |
+
+## 開発に加わる人へ
+
+この道具は、IPA（情報処理推進機構）の「[AI時代の要求管理ハンドブック](https://www.ipa.go.jp/digital/kaihatsu/rqr7mi000000f5up-att/req-mgmt-hb.pdf)」に沿って開発しています。頼まれたことをすぐに作らず、目的と、求めることを先に書き出してから作る進め方です。リポジトリの名前は、ここから付けています。
+
+作業の前に、次の順で読んでください。
+
+1. [docs/process.md](docs/process.md)　開発の進め方と決まり
+2. [docs/handoff.md](docs/handoff.md)　今の状態、工程ごとの進み具合、次に行うこと
+3. [AGENTS.md](AGENTS.md)　作業する AI への案内
+
+## 問い合わせ
+
+質問や不具合は、このリポジトリの [Issues](https://github.com/xclang-brain/ipa-ai-driven/issues) に書いてください。
