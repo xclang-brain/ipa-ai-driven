@@ -1,11 +1,11 @@
-"""下書き（FR-007〜FR-010）と検査（FR-009〜FR-013）のテスト。"""
+"""下書き（FR-007〜FR-010）と検査（FR-009〜FR-013、FR-017）のテスト。"""
 
 import re
 
-from docmig.document import consume_all, parse
+from docmig.document import consume_all, mermaid_arrows, parse
 from docmig.verify import verify
 
-from conftest import DIAGRAM_SHEET, draft_of, sheet_of
+from conftest import DIAGRAM_SHEET, ROOT, draft_of, sheet_of
 
 
 def kinds(report):
@@ -159,3 +159,100 @@ def test_fr011_sheet_name_heading_does_not_stand_in_for_a_cell(complete_document
     assert document != complete_document
     errors = verify(document, extract)["errors"]
     assert [(e["kind"], e.get("cell")) for e in errors] == [("文字の欠落", "B5")]
+
+
+# --- 原本にない矢印（FR-017） --------------------------------------------------
+
+SUBWINDOW_SHEET = "2. 顧客情報管理(11AB)"
+
+# サンプル文書のシート「2. 顧客情報管理(11AB)」にある、凡例を除く6本の線
+ORIGINAL_ARROWS = """\
+    s26761 -->|"顧客情報登録"| s26684
+    s26684 -->|"確認"| s26690
+    s26690 -->|"戻る"| s26684
+    s26690 -->|"確定"| s26693
+    s26684 -->|"住所検索"| s26715
+    s26715 -->|"閉じる、選択"| s26684
+"""
+
+
+def with_mermaid(document, extract, arrows):
+    """シート「2. 顧客情報管理(11AB)」の図の枠に、Mermaid の図を足す。"""
+    sheet = sheet_of(extract, SUBWINDOW_SHEET)
+    marker = f'<!-- figure:begin id="fig-s{sheet["index"]}"'
+    head, tail = document.split(marker, 1)
+    figure, rest = tail.split("<!-- figure:end -->", 1)
+    mermaid = "```mermaid\nflowchart LR\n" + arrows + "```\n"
+    return head + marker + figure + mermaid + "<!-- figure:end -->" + rest
+
+
+def arrow_errors(report):
+    return [e["detail"] for e in report["errors"] if e["kind"] == "原本にない矢印"]
+
+
+def test_fr017_arrows_that_match_the_original_lines_pass(complete_document, extract):
+    report = verify(with_mermaid(complete_document, extract, ORIGINAL_ARROWS), extract)
+    assert report["passed"]
+
+
+def test_fr017_arrow_without_an_original_line_is_reported(complete_document, extract):
+    # Copilot CLI（gpt-4.1）の試行で、実際に書かれた2本
+    added = ORIGINAL_ARROWS + '    s26693 -- "一覧照会へ" --> s26694["一覧照会へ"]\n    s26698 -- "" --> s26761\n'
+    report = verify(with_mermaid(complete_document, extract, added), extract)
+    assert not report["passed"]
+    assert arrow_errors(report) == ["s26693 から s26694 への矢印", "s26698 から s26761 への矢印"]
+    assert all(e["figure"] == "fig-s5" for e in report["errors"])
+
+
+def test_fr017_reversed_arrow_is_reported(complete_document, extract):
+    reversed_arrow = ORIGINAL_ARROWS.replace('s26690 -->|"確定"| s26693', 's26693 -->|"確定"| s26690')
+    report = verify(with_mermaid(complete_document, extract, reversed_arrow), extract)
+    assert arrow_errors(report) == ["s26693 から s26690 への矢印"]
+
+
+def test_fr017_second_arrow_for_the_same_line_is_reported(complete_document, extract):
+    doubled = ORIGINAL_ARROWS + '    s26690 -->|"確定"| s26693\n'
+    report = verify(with_mermaid(complete_document, extract, doubled), extract)
+    assert arrow_errors(report) == ["s26690 から s26693 への矢印"]
+
+
+def test_fr017_line_without_arrowheads_matches_either_direction(complete_document, extract):
+    line = next(c for c in sheet_of(extract, SUBWINDOW_SHEET)["connectors"] if c["id"] == "26755")
+    line["arrow_end"] = False
+    reversed_arrow = ORIGINAL_ARROWS.replace('s26690 -->|"確定"| s26693', "s26693 --- s26690")
+    report = verify(with_mermaid(complete_document, extract, reversed_arrow), extract)
+    assert report["passed"]
+
+
+def test_fr017_arrow_notations_are_read():
+    mermaid = """\
+    s1["画面A<br>【ID】"] -->|"次へ"| s2
+    s2 -- "戻る" --> s1
+    s2 -.-> s3 ==> s4
+    s5 & s6 --> s7
+    s8 <--> s9
+    s10 --- s11
+    subgraph s20["A --> B という見出し"]
+    end
+"""
+    assert mermaid_arrows(mermaid) == [
+        ("s1", "s2", True),
+        ("s2", "s1", True),
+        ("s2", "s3", True),
+        ("s3", "s4", True),
+        ("s5", "s7", True),
+        ("s6", "s7", True),
+        ("s8", "s9", False),
+        ("s10", "s11", False),
+    ]
+
+
+def test_fr017_sample_transcription_passes():
+    folder = ROOT / "migrated" / "screen-transition"
+    import json
+
+    extract = json.loads((folder / "extract.json").read_text(encoding="utf-8"))
+    report = verify((folder / "document.md").read_text(encoding="utf-8"), extract)
+    assert arrow_errors(report) == []
+    assert report["passed"]
+

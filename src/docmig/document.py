@@ -29,6 +29,16 @@ _ESCAPE = re.compile(r"\\([\\`*_{}\[\]()#+\-.!|<>~])")
 _SPACE = re.compile(r"\s+")
 _TOP_HEADING = re.compile(r"^#{1,2} .*$", re.M)
 
+# Mermaid の矢印を読むための正規表現（FR-017）
+_MERMAID_QUOTED = re.compile(r'"[^"]*"')
+_MERMAID_PIPED = re.compile(r"\|[^|]*\|")
+_MERMAID_BRACKETS = re.compile(r"[\[\](){}]")
+_MERMAID_NOT_ARROW = re.compile(r"\s*(%%|subgraph\b|end\b|flowchart\b|graph\b|direction\b|classDef\b|class\b|style\b|linkStyle\b|click\b)")
+_MERMAID_NODES = r"s\d+(?:\s*&\s*s\d+)*"
+_MERMAID_LINK = re.compile(
+    rf"(?P<left>{_MERMAID_NODES})\s*(?P<link>[<>\-=.ox ]*[-=.]{{2,}}[<>\-=.ox ]*?)\s*(?=(?P<right>{_MERMAID_NODES}))"
+)
+
 
 def normalize(text: str) -> str:
     """照合のために文字列を整える。空白と改行を取り除く。"""
@@ -63,6 +73,10 @@ class Figure:
     def is_todo(self) -> bool:
         return TODO_MARK in self.body
 
+    @property
+    def arrows(self) -> list[tuple[str, str, bool]]:
+        return [arrow for block in _MERMAID.findall(self.body) for arrow in mermaid_arrows(block)]
+
 
 @dataclass
 class Document:
@@ -73,6 +87,29 @@ class Document:
     @property
     def review_marks(self) -> list[str]:
         return [m.group(1).strip() for m in _REVIEW_MARK.finditer(_COMMENT.sub("", self.body))]
+
+
+def mermaid_arrows(mermaid: str) -> list[tuple[str, str, bool]]:
+    """Mermaid の flowchart に書かれた矢印を、(始点, 終点, 向きがあるか) の一覧にする。
+
+    節点の名前は s + 数字のものだけを読む。文字（引用符や | で囲んだ部分）の中は読まない。
+    矢じりが両端にある線と、矢じりのない線は、向きがないものとする。
+    """
+    arrows = []
+    for line in mermaid.splitlines():
+        line = _MERMAID_BRACKETS.sub(" ", _MERMAID_PIPED.sub(" ", _MERMAID_QUOTED.sub("", line)))
+        if _MERMAID_NOT_ARROW.match(line):
+            continue
+        for match in _MERMAID_LINK.finditer(line):
+            link = match["link"].strip()
+            forward, backward = link.endswith(">"), link.startswith("<")
+            for left in re.findall(r"s\d+", match["left"]):
+                for right in re.findall(r"s\d+", match["right"]):
+                    if backward and not forward:
+                        arrows.append((right, left, True))
+                    else:
+                        arrows.append((left, right, forward and not backward))
+    return arrows
 
 
 def parse(markdown: str) -> Document:
