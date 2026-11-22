@@ -161,6 +161,21 @@ def test_fr011_sheet_name_heading_does_not_stand_in_for_a_cell(complete_document
     assert [(e["kind"], e.get("cell")) for e in errors] == [("文字の欠落", "B5")]
 
 
+def test_fr011_missing_string_is_attributed_to_the_figure_left_as_todo(extract):
+    # 「戻る」「確定」「SAMPLE」などは、2つの図の両方にある。片方の図だけを書き起こした場合に、
+    # 書き起こした図の図形が欠落として報告されると、どの図を直せばよいかを誤解する。
+    done = sheet_of(extract, "2. 顧客情報管理(11AB)")
+    texts = [s["text"].replace("\n", " ") for s in done["shapes"] + done["connectors"] if s["text"]]
+    marker = f'<!-- figure:begin id="fig-s{done["index"]}"'
+    head, tail = draft_of(extract).split(marker, 1)
+    document = head + marker + tail.replace("<!-- transcription:todo -->", "\n\n".join(texts), 1)
+    report = verify(document, extract)
+    missing = [e for e in report["errors"] if e["kind"] == "文字の欠落"]
+    assert missing
+    assert [e for e in missing if e["sheet"] == done["name"]] == []
+    assert "図の文字の欠落" not in kinds(report)
+
+
 # --- 原本にない矢印（FR-017） --------------------------------------------------
 
 SUBWINDOW_SHEET = "2. 顧客情報管理(11AB)"

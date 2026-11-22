@@ -20,7 +20,7 @@
 
 ## 2. 自動テストの結果
 
-テストは52件あり、すべて合格した。要件ごとの対応は [traceability.md](traceability.md) にある。
+テストは53件あり、すべて合格した。要件ごとの対応は [traceability.md](traceability.md) にある。
 
 | 状態 | 件数 | 要件 |
 |---|---|---|

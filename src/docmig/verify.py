@@ -85,13 +85,22 @@ def verify(markdown: str, extract: dict, source: Path | None = None) -> dict:
         if sha256_of(source) != extract["source"]["sha256"]:
             errors.append({"kind": "原本の不一致", "detail": f"原本のファイル {source} の内容が、中間データと一致しない"})
 
+    figures = {figure.sheet: figure for figure in document.figures}
+
     # 文字の照合（FR-011）
-    missing = consume_all(body_text(document.body), required_strings(extract))
+    # 同じ文字列が複数の図にある場合は、書き起こしが済んだ図の図形から先に数える。
+    # 欠落が、未記入の図の図形として報告されるようにするためである。
+    pending = {
+        sheet["name"]
+        for sheet in extract["sheets"]
+        if has_figure(sheet) and (sheet["name"] not in figures or figures[sheet["name"]].is_todo)
+    }
+    required = sorted(required_strings(extract), key=lambda item: "shape" in item[1] and item[1]["sheet"] in pending)
+    missing = consume_all(body_text(document.body), required)
     for item in missing:
         errors.append({"kind": "文字の欠落", **item})
 
     # 図の検査（FR-012）
-    figures = {figure.sheet: figure for figure in document.figures}
     todo = []
     for sheet in extract["sheets"]:
         if not has_figure(sheet):
@@ -123,7 +132,6 @@ def verify(markdown: str, extract: dict, source: Path | None = None) -> dict:
         if status == STATUSES[2] and marks:
             errors.append({"kind": "状態の矛盾", "detail": "要確認の印が残っている文書が「承認済み」になっている"})
 
-    required = required_strings(extract)
     return {
         "passed": not errors,
         "review_status": status,
