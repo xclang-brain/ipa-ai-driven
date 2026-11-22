@@ -89,7 +89,17 @@ def _render_libreoffice(source: Path, extract: dict, figures_dir: Path) -> None:
         copy = Path(work) / ("source" + source.suffix)
         shutil.copyfile(source, copy)
         subprocess.run(
-            [command, "--headless", "--convert-to", "pdf", "--outdir", work, str(copy)],
+            [
+                command,
+                # 実行ごとに別の設定フォルダを使う。同時に複数を実行しても衝突しないようにする
+                f"-env:UserInstallation={(Path(work) / 'profile').as_uri()}",
+                "--headless",
+                "--convert-to",
+                "pdf",
+                "--outdir",
+                work,
+                str(copy),
+            ],
             check=True,
             capture_output=True,
             timeout=600,
