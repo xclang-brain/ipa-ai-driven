@@ -7,7 +7,7 @@
 # priority: Must / Should / Could
 # source: H-n はヒアリング記録（docs/03-hearing-00x.md）の番号。作成者 は依頼者の発言にない補足
 
-version: 1.0
+version: 1.1
 updated: 2026-11-22
 requirements:
   - id: REQ-001
@@ -280,24 +280,26 @@ requirements:
     title: 確認の状態の表示
     statement: 移行後の文書ごとに、確認がどこまで済んでいるか（未確認、AI が確認済み、人が承認済み）が分かるようにしたい
     type: 運用要求
-    source: [作成者]
+    source: [作成者, H-13]
     priority: Must
-    status: 分析済み
+    status: 合意済み
     related: [REQ-005, REQ-012, REQ-017]
     verification: 未定（工程5で定める）
     history:
       - {date: 2026-11-22, change: 要求分析で追加（作成者の補足）。REQ-017 と REQ-012 の両立のため。依頼者は未確認}
       - {date: 2026-11-22, change: ベースライン 1.0 に含める。手段と初回の範囲への合意の中で扱ったが、この要求そのものについての依頼者の明示の確認は得ていない}
+      - {date: 2026-11-22, change: 合意済みに変更。依頼者が、そのまま採用してよいと回答した（CHG-006）}
 
   - id: REQ-021
     title: 読み取れない箇所の扱い
     statement: AI が読み取れなかった箇所や確信のない箇所を、推測で埋めずに印を付けて残したい
     type: AI要求
-    source: [作成者]
+    source: [作成者, H-13]
     priority: Must
-    status: 分析済み
+    status: 合意済み
     related: [REQ-003, REQ-012]
     verification: 未定（工程5で定める）
     history:
       - {date: 2026-11-22, change: 要求分析で追加（作成者の補足）。ハンドブック 5.3 節「AI が迷ったときの振る舞い」に基づく。依頼者は未確認}
       - {date: 2026-11-22, change: ベースライン 1.0 に含める。手段と初回の範囲への合意の中で扱ったが、この要求そのものについての依頼者の明示の確認は得ていない}
+      - {date: 2026-11-22, change: 合意済みに変更。依頼者が、そのまま採用してよいと回答した（CHG-006）}
