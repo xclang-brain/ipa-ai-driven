@@ -68,6 +68,7 @@
           "kind": "rect",
           "anchor": "P2:S5",
           "group": "2",
+          "dash": null,
           "text": "関係者外秘",
           "textbox": true,
           "bbox": [
@@ -83,6 +84,7 @@
           "kind": "rect",
           "anchor": "P2:S5",
           "group": "2",
+          "dash": null,
           "text": "PJ関係者限り",
           "textbox": true,
           "bbox": [
@@ -98,6 +100,7 @@
           "kind": "rect",
           "anchor": "D9:Q20",
           "group": null,
+          "dash": null,
           "text": "サンプルプロジェクト\n\n画面遷移図\n\nサンプルサブシステム",
           "textbox": true,
           "bbox": [
@@ -113,6 +116,7 @@
           "kind": "rect",
           "anchor": "E13",
           "group": null,
+          "dash": null,
           "text": "SAMPLE",
           "textbox": false,
           "bbox": [
@@ -481,6 +485,7 @@
           "kind": "rect",
           "anchor": "H11",
           "group": null,
+          "dash": null,
           "text": "SAMPLE",
           "textbox": false,
           "bbox": [
@@ -728,6 +733,7 @@
           "kind": "rect",
           "anchor": "G13",
           "group": null,
+          "dash": null,
           "text": "SAMPLE",
           "textbox": false,
           "bbox": [
@@ -931,6 +937,7 @@
           "kind": "roundRect",
           "anchor": "K11:AI22",
           "group": null,
+          "dash": null,
           "text": "",
           "textbox": false,
           "bbox": [
@@ -946,6 +953,7 @@
           "kind": "roundRect",
           "anchor": "K43:AI52",
           "group": null,
+          "dash": null,
           "text": "",
           "textbox": false,
           "bbox": [
@@ -961,6 +969,7 @@
           "kind": "roundRect",
           "anchor": "K31:AI42",
           "group": null,
+          "dash": null,
           "text": "",
           "textbox": false,
           "bbox": [
@@ -976,6 +985,7 @@
           "kind": "rect",
           "anchor": "T30:Z32",
           "group": null,
+          "dash": null,
           "text": "SW11AA03/企業情報更新",
           "textbox": false,
           "bbox": [
@@ -991,6 +1001,7 @@
           "kind": "rect",
           "anchor": "Q34:T36",
           "group": null,
+          "dash": null,
           "text": "確認",
           "textbox": true,
           "bbox": [
@@ -1006,6 +1017,7 @@
           "kind": "rect",
           "anchor": "T38:W40",
           "group": null,
+          "dash": null,
           "text": "戻る",
           "textbox": true,
           "bbox": [
@@ -1021,6 +1033,7 @@
           "kind": "rect",
           "anchor": "M35:Q39",
           "group": null,
+          "dash": null,
           "text": "企業情報更新\n【W11AA0301】",
           "textbox": false,
           "bbox": [
@@ -1036,6 +1049,7 @@
           "kind": "rect",
           "anchor": "Z34:AC36",
           "group": null,
+          "dash": null,
           "text": "確定",
           "textbox": true,
           "bbox": [
@@ -1051,6 +1065,7 @@
           "kind": "rect",
           "anchor": "V35:Z39",
           "group": null,
+          "dash": null,
           "text": "企業情報更新確認\n【W11AA0302】",
           "textbox": false,
           "bbox": [
@@ -1066,6 +1081,7 @@
           "kind": "rect",
           "anchor": "AE35:AI39",
           "group": null,
+          "dash": null,
           "text": "企業情報更新完了\n【W11AA0303】",
           "textbox": false,
           "bbox": [
@@ -1081,6 +1097,7 @@
           "kind": "rect",
           "anchor": "AG33:AI35",
           "group": null,
+          "dash": null,
           "text": "一覧照会へ",
           "textbox": true,
           "bbox": [
@@ -1096,6 +1113,7 @@
           "kind": "roundRect",
           "anchor": "B20:J43",
           "group": null,
+          "dash": null,
           "text": "",
           "textbox": false,
           "bbox": [
@@ -1111,6 +1129,7 @@
           "kind": "rect",
           "anchor": "D19:I21",
           "group": null,
+          "dash": null,
           "text": "SW11AA01/企業情報照会",
           "textbox": false,
           "bbox": [
@@ -1126,6 +1145,7 @@
           "kind": "rect",
           "anchor": "D22:H29",
           "group": null,
+          "dash": null,
           "text": "企業情報一覧照会\n【W11AA0101】",
           "textbox": false,
           "bbox": [
@@ -1141,6 +1161,7 @@
           "kind": "rect",
           "anchor": "H22:L23",
           "group": null,
+          "dash": null,
           "text": "検索",
           "textbox": true,
           "bbox": [
@@ -1156,6 +1177,7 @@
           "kind": "rect",
           "anchor": "D35:H39",
           "group": null,
+          "dash": null,
           "text": "企業情報詳細\n【W11AA0102】",
           "textbox": false,
           "bbox": [
@@ -1171,6 +1193,7 @@
           "kind": "rect",
           "anchor": "H34:K36",
           "group": null,
+          "dash": null,
           "text": "更新",
           "textbox": true,
           "bbox": [
@@ -1186,6 +1209,7 @@
           "kind": "rect",
           "anchor": "C33:F35",
           "group": null,
+          "dash": null,
           "text": "戻る",
           "textbox": true,
           "bbox": [
@@ -1201,6 +1225,7 @@
           "kind": "rect",
           "anchor": "F25:F26",
           "group": null,
+          "dash": null,
           "text": "",
           "textbox": true,
           "bbox": [
@@ -1216,6 +1241,7 @@
           "kind": "rect",
           "anchor": "J31:J32",
           "group": null,
+          "dash": null,
           "text": "",
           "textbox": true,
           "bbox": [
@@ -1231,6 +1257,7 @@
           "kind": "rect",
           "anchor": "G29:K32",
           "group": null,
+          "dash": null,
           "text": "企業コード",
           "textbox": true,
           "bbox": [
@@ -1246,6 +1273,7 @@
           "kind": "rect",
           "anchor": "K38:N40",
           "group": null,
+          "dash": null,
           "text": "戻る",
           "textbox": true,
           "bbox": [
@@ -1261,6 +1289,7 @@
           "kind": "rect",
           "anchor": "T42:Z44",
           "group": null,
+          "dash": null,
           "text": "SW11AA04/企業情報削除",
           "textbox": false,
           "bbox": [
@@ -1276,6 +1305,7 @@
           "kind": "rect",
           "anchor": "Q45:T47",
           "group": null,
+          "dash": null,
           "text": "確定",
           "textbox": true,
           "bbox": [
@@ -1291,6 +1321,7 @@
           "kind": "rect",
           "anchor": "M46:Q50",
           "group": null,
+          "dash": null,
           "text": "企業情報削除確認\n【W11AA0402】",
           "textbox": false,
           "bbox": [
@@ -1306,6 +1337,7 @@
           "kind": "rect",
           "anchor": "K49:N51",
           "group": null,
+          "dash": null,
           "text": "戻る",
           "textbox": true,
           "bbox": [
@@ -1321,6 +1353,7 @@
           "kind": "rect",
           "anchor": "V46:Z50",
           "group": null,
+          "dash": null,
           "text": "企業情報削除完了\n【W11AA0403】",
           "textbox": false,
           "bbox": [
@@ -1336,6 +1369,7 @@
           "kind": "rect",
           "anchor": "Z45:AD47",
           "group": null,
+          "dash": null,
           "text": "一覧照会へ",
           "textbox": true,
           "bbox": [
@@ -1351,6 +1385,7 @@
           "kind": "rect",
           "anchor": "T10:Z12",
           "group": null,
+          "dash": null,
           "text": "SW11AA02/企業情報登録",
           "textbox": false,
           "bbox": [
@@ -1366,6 +1401,7 @@
           "kind": "rect",
           "anchor": "Q14:T16",
           "group": null,
+          "dash": null,
           "text": "確認",
           "textbox": true,
           "bbox": [
@@ -1381,6 +1417,7 @@
           "kind": "rect",
           "anchor": "T18:W20",
           "group": null,
+          "dash": null,
           "text": "戻る",
           "textbox": true,
           "bbox": [
@@ -1396,6 +1433,7 @@
           "kind": "rect",
           "anchor": "M15:Q19",
           "group": null,
+          "dash": null,
           "text": "企業情報登録\n【W11AA0201】",
           "textbox": false,
           "bbox": [
@@ -1411,6 +1449,7 @@
           "kind": "rect",
           "anchor": "Z14:AC16",
           "group": null,
+          "dash": null,
           "text": "確定",
           "textbox": true,
           "bbox": [
@@ -1426,6 +1465,7 @@
           "kind": "rect",
           "anchor": "V15:Z19",
           "group": null,
+          "dash": null,
           "text": "企業情報登録確認\n【W11AA0202】",
           "textbox": false,
           "bbox": [
@@ -1441,6 +1481,7 @@
           "kind": "rect",
           "anchor": "AE15:AI19",
           "group": null,
+          "dash": null,
           "text": "企業情報登録完了\n【W11AA0203】",
           "textbox": false,
           "bbox": [
@@ -1456,6 +1497,7 @@
           "kind": "rect",
           "anchor": "AG19:AI21",
           "group": null,
+          "dash": null,
           "text": "一覧照会へ",
           "textbox": true,
           "bbox": [
@@ -1471,6 +1513,7 @@
           "kind": "rect",
           "anchor": "G39:J41",
           "group": null,
+          "dash": null,
           "text": "削除",
           "textbox": true,
           "bbox": [
@@ -1486,6 +1529,7 @@
           "kind": "rect",
           "anchor": "B15:G17",
           "group": null,
+          "dash": null,
           "text": "企業情報登録",
           "textbox": true,
           "bbox": [
@@ -1501,6 +1545,7 @@
           "kind": "ellipse",
           "anchor": "A16:B17",
           "group": null,
+          "dash": null,
           "text": "",
           "textbox": false,
           "bbox": [
@@ -1516,6 +1561,7 @@
           "kind": "ellipse",
           "anchor": "A26:B27",
           "group": null,
+          "dash": null,
           "text": "",
           "textbox": false,
           "bbox": [
@@ -1531,6 +1577,7 @@
           "kind": "rect",
           "anchor": "A23:E26",
           "group": null,
+          "dash": null,
           "text": "企業情報一覧\n照会",
           "textbox": true,
           "bbox": [
@@ -1546,6 +1593,7 @@
           "kind": "rect",
           "anchor": "A7:W10",
           "group": null,
+          "dash": null,
           "text": "・画面遷移図は機能単位にシートを分けて作成する。\n・サブウィンドウへの遷移がある場合の記述例は「2. 顧客情報管理(11AB)」シートを参照する。",
           "textbox": false,
           "bbox": [
@@ -1561,6 +1609,7 @@
           "kind": "rect",
           "anchor": "Q56:AH71",
           "group": "127",
+          "dash": null,
           "text": "AAA\n【BBB】",
           "textbox": false,
           "bbox": [
@@ -1576,6 +1625,7 @@
           "kind": "rect",
           "anchor": "Q56:AH71",
           "group": "127",
+          "dash": null,
           "text": "",
           "textbox": false,
           "bbox": [
@@ -1591,6 +1641,7 @@
           "kind": "rect",
           "anchor": "Q56:AH71",
           "group": "127",
+          "dash": null,
           "text": "【凡例】",
           "textbox": true,
           "bbox": [
@@ -1606,6 +1657,7 @@
           "kind": "rect",
           "anchor": "Q56:AH71",
           "group": "131",
+          "dash": null,
           "text": "CCC",
           "textbox": true,
           "bbox": [
@@ -1621,6 +1673,7 @@
           "kind": "rect",
           "anchor": "Q56:AH71",
           "group": "127",
+          "dash": null,
           "text": "表示画面\n(メインウィンドウ)を表す。\nAAA：画面名称\nBBB：画面ID",
           "textbox": true,
           "bbox": [
@@ -1636,6 +1689,7 @@
           "kind": "rect",
           "anchor": "Q56:AH71",
           "group": "127",
+          "dash": null,
           "text": "画面遷移を表す。\nCCC：ボタン/リンク名",
           "textbox": true,
           "bbox": [
@@ -1651,6 +1705,7 @@
           "kind": "ellipse",
           "anchor": "Q56:AH71",
           "group": "127",
+          "dash": null,
           "text": "",
           "textbox": false,
           "bbox": [
@@ -1666,6 +1721,7 @@
           "kind": "rect",
           "anchor": "Q56:AH71",
           "group": "127",
+          "dash": null,
           "text": "トップ画面を表す。",
           "textbox": true,
           "bbox": [
@@ -1681,6 +1737,7 @@
           "kind": "roundRect",
           "anchor": "Q56:AH71",
           "group": "127",
+          "dash": null,
           "text": "",
           "textbox": false,
           "bbox": [
@@ -1696,6 +1753,7 @@
           "kind": "rect",
           "anchor": "Q56:AH71",
           "group": "127",
+          "dash": null,
           "text": "DDD/EEE",
           "textbox": false,
           "bbox": [
@@ -1711,6 +1769,7 @@
           "kind": "rect",
           "anchor": "Q56:AH71",
           "group": "127",
+          "dash": null,
           "text": "画面設計書の\n記載範囲。\nDDD：画面設計書ID\nEEE：画面設計書名",
           "textbox": true,
           "bbox": [
@@ -1726,6 +1785,7 @@
           "kind": "rect",
           "anchor": "Q56:AH71",
           "group": "127",
+          "dash": "dash",
           "text": "AAA\n【BBB】",
           "textbox": false,
           "bbox": [
@@ -1741,6 +1801,7 @@
           "kind": "rect",
           "anchor": "Q56:AH71",
           "group": "127",
+          "dash": null,
           "text": "表示画面(サブウィンドウ)を表す。\nAAA：画面名称\nBBB：画面ID",
           "textbox": true,
           "bbox": [
@@ -1756,6 +1817,7 @@
           "kind": "rect",
           "anchor": "H23",
           "group": null,
+          "dash": null,
           "text": "SAMPLE",
           "textbox": false,
           "bbox": [
@@ -1771,6 +1833,7 @@
           "kind": "rect",
           "anchor": "G57",
           "group": null,
+          "dash": null,
           "text": "SAMPLE",
           "textbox": false,
           "bbox": [
@@ -1788,6 +1851,7 @@
           "kind": "straightConnector1",
           "anchor": "Q38:V38",
           "group": null,
+          "dash": null,
           "start": [
             5800725,
             5381625
@@ -1816,6 +1880,7 @@
           "kind": "straightConnector1",
           "anchor": "Q36:V36",
           "group": null,
+          "dash": null,
           "start": [
             4419600,
             5095875
@@ -1844,6 +1909,7 @@
           "kind": "straightConnector1",
           "anchor": "Z36:AE36",
           "group": null,
+          "dash": null,
           "start": [
             6905625,
             5095875
@@ -1872,6 +1938,7 @@
           "kind": "bentConnector4",
           "anchor": "F22:H23",
           "group": null,
+          "dash": null,
           "start": [
             1962150,
             3314700
@@ -1900,6 +1967,7 @@
           "kind": "bentConnector2",
           "anchor": "H28:AG35",
           "group": null,
+          "dash": null,
           "start": [
             1933575,
             3952875
@@ -1928,6 +1996,7 @@
           "kind": "bentConnector3",
           "anchor": "H26:Z47",
           "group": null,
+          "dash": null,
           "start": [
             6915150,
             6667500
@@ -1956,6 +2025,7 @@
           "kind": "bentConnector2",
           "anchor": "H19:AG25",
           "group": null,
+          "dash": null,
           "start": [
             8839200,
             2667000
@@ -1984,6 +2054,7 @@
           "kind": "straightConnector1",
           "anchor": "E29:E35",
           "group": null,
+          "dash": null,
           "start": [
             1143000,
             4953000
@@ -1998,7 +2069,7 @@
           "attached_end": null,
           "text": "",
           "near_start": {
-            "shape": "23579",
+            "shape": "23570",
             "distance_pt": 0.0
           },
           "near_end": {
@@ -2012,6 +2083,7 @@
           "kind": "straightConnector1",
           "anchor": "G29:G35",
           "group": null,
+          "dash": null,
           "start": [
             1695450,
             4095750
@@ -2040,6 +2112,7 @@
           "kind": "straightConnector1",
           "anchor": "Q47:V47",
           "group": null,
+          "dash": null,
           "start": [
             4419600,
             6667500
@@ -2068,6 +2141,7 @@
           "kind": "bentConnector3",
           "anchor": "E39:M49",
           "group": null,
+          "dash": null,
           "start": [
             3314700,
             6953250
@@ -2096,6 +2170,7 @@
           "kind": "straightConnector1",
           "anchor": "Q18:V18",
           "group": null,
+          "dash": null,
           "start": [
             5800725,
             2524125
@@ -2124,6 +2199,7 @@
           "kind": "straightConnector1",
           "anchor": "Q16:V16",
           "group": null,
+          "dash": null,
           "start": [
             4419600,
             2238375
@@ -2152,6 +2228,7 @@
           "kind": "straightConnector1",
           "anchor": "Z16:AE16",
           "group": null,
+          "dash": null,
           "start": [
             6905625,
             2238375
@@ -2180,6 +2257,7 @@
           "kind": "bentConnector3",
           "anchor": "G39:M47",
           "group": null,
+          "dash": null,
           "start": [
             1695450,
             5524500
@@ -2208,6 +2286,7 @@
           "kind": "straightConnector1",
           "anchor": "B17:M17",
           "group": null,
+          "dash": null,
           "start": [
             276225,
             2381250
@@ -2236,6 +2315,7 @@
           "kind": "straightConnector1",
           "anchor": "B26:D26",
           "group": null,
+          "dash": null,
           "start": [
             276225,
             3743325
@@ -2264,6 +2344,7 @@
           "kind": "straightConnector1",
           "anchor": "H36:M36",
           "group": null,
+          "dash": null,
           "start": [
             1933575,
             5095875
@@ -2292,6 +2373,7 @@
           "kind": "straightConnector1",
           "anchor": "H38:M38",
           "group": null,
+          "dash": null,
           "start": [
             3314700,
             5381625
@@ -2320,6 +2402,7 @@
           "kind": "line",
           "anchor": "Q56:AH71",
           "group": "131",
+          "dash": null,
           "start": [
             7139517,
             8439727
@@ -2557,6 +2640,7 @@
           "kind": "roundRect",
           "anchor": "K22:V31",
           "group": null,
+          "dash": null,
           "text": "",
           "textbox": false,
           "bbox": [
@@ -2572,6 +2656,7 @@
           "kind": "roundRect",
           "anchor": "K10:AI20",
           "group": null,
+          "dash": null,
           "text": "",
           "textbox": false,
           "bbox": [
@@ -2587,6 +2672,7 @@
           "kind": "rect",
           "anchor": "T9:Z10",
           "group": null,
+          "dash": null,
           "text": "SW11AB02/顧客情報登録",
           "textbox": false,
           "bbox": [
@@ -2602,6 +2688,7 @@
           "kind": "rect",
           "anchor": "Q13:T15",
           "group": null,
+          "dash": null,
           "text": "確認",
           "textbox": true,
           "bbox": [
@@ -2617,6 +2704,7 @@
           "kind": "rect",
           "anchor": "T17:W19",
           "group": null,
+          "dash": null,
           "text": "戻る",
           "textbox": true,
           "bbox": [
@@ -2632,6 +2720,7 @@
           "kind": "rect",
           "anchor": "M13:Q17",
           "group": null,
+          "dash": null,
           "text": "顧客情報登録\n【W11AB0201】",
           "textbox": false,
           "bbox": [
@@ -2647,6 +2736,7 @@
           "kind": "rect",
           "anchor": "Z13:AC15",
           "group": null,
+          "dash": null,
           "text": "確定",
           "textbox": true,
           "bbox": [
@@ -2662,6 +2752,7 @@
           "kind": "rect",
           "anchor": "V13:Z17",
           "group": null,
+          "dash": null,
           "text": "顧客情報登録確認\n【W11AB0202】",
           "textbox": false,
           "bbox": [
@@ -2677,6 +2768,7 @@
           "kind": "rect",
           "anchor": "AE13:AI17",
           "group": null,
+          "dash": null,
           "text": "顧客情報登録完了\n【W11AB0203】",
           "textbox": false,
           "bbox": [
@@ -2692,6 +2784,7 @@
           "kind": "rect",
           "anchor": "AF17:AI20",
           "group": null,
+          "dash": null,
           "text": "一覧照会へ",
           "textbox": true,
           "bbox": [
@@ -2707,6 +2800,7 @@
           "kind": "rect",
           "anchor": "C14:H16",
           "group": null,
+          "dash": null,
           "text": "顧客情報登録",
           "textbox": true,
           "bbox": [
@@ -2722,6 +2816,7 @@
           "kind": "ellipse",
           "anchor": "B15:B16",
           "group": null,
+          "dash": null,
           "text": "",
           "textbox": false,
           "bbox": [
@@ -2737,6 +2832,7 @@
           "kind": "rect",
           "anchor": "M25:Q29",
           "group": null,
+          "dash": "dash",
           "text": "住所情報検索\n【W91AA0101】",
           "textbox": false,
           "bbox": [
@@ -2752,6 +2848,7 @@
           "kind": "rect",
           "anchor": "P21:V22",
           "group": null,
+          "dash": null,
           "text": "SW91AA01/住所情報検索",
           "textbox": false,
           "bbox": [
@@ -2767,6 +2864,7 @@
           "kind": "rect",
           "anchor": "K18:O20",
           "group": null,
+          "dash": null,
           "text": "住所検索",
           "textbox": true,
           "bbox": [
@@ -2782,6 +2880,7 @@
           "kind": "rect",
           "anchor": "P18:S20",
           "group": null,
+          "dash": null,
           "text": "閉じる、選択",
           "textbox": true,
           "bbox": [
@@ -2797,6 +2896,7 @@
           "kind": "rect",
           "anchor": "A4:L6",
           "group": null,
+          "dash": null,
           "text": "サブウィンドウへの遷移サンプル",
           "textbox": true,
           "bbox": [
@@ -2812,6 +2912,7 @@
           "kind": "rect",
           "anchor": "Q41:T44",
           "group": null,
+          "dash": null,
           "text": "AAA\n【BBB】",
           "textbox": false,
           "bbox": [
@@ -2827,6 +2928,7 @@
           "kind": "rect",
           "anchor": "Q35:AH50",
           "group": null,
+          "dash": null,
           "text": "",
           "textbox": false,
           "bbox": [
@@ -2842,6 +2944,7 @@
           "kind": "rect",
           "anchor": "Q35:S37",
           "group": null,
+          "dash": null,
           "text": "【凡例】",
           "textbox": true,
           "bbox": [
@@ -2857,6 +2960,7 @@
           "kind": "rect",
           "anchor": "Z37:AB38",
           "group": "138",
+          "dash": null,
           "text": "CCC",
           "textbox": true,
           "bbox": [
@@ -2872,6 +2976,7 @@
           "kind": "rect",
           "anchor": "T40:Y45",
           "group": null,
+          "dash": null,
           "text": "表示画面\n(メインウィンドウ)を表す。\nAAA：画面名称\nBBB：画面ID",
           "textbox": true,
           "bbox": [
@@ -2887,6 +2992,7 @@
           "kind": "rect",
           "anchor": "AD37:AH40",
           "group": null,
+          "dash": null,
           "text": "画面遷移を表す。\nCCC：ボタン/リンク名",
           "textbox": true,
           "bbox": [
@@ -2902,6 +3008,7 @@
           "kind": "ellipse",
           "anchor": "R38:S39",
           "group": null,
+          "dash": null,
           "text": "",
           "textbox": false,
           "bbox": [
@@ -2917,6 +3024,7 @@
           "kind": "rect",
           "anchor": "T38:X39",
           "group": null,
+          "dash": null,
           "text": "トップ画面を表す。",
           "textbox": true,
           "bbox": [
@@ -2932,6 +3040,7 @@
           "kind": "roundRect",
           "anchor": "Z41:AD43",
           "group": null,
+          "dash": null,
           "text": "",
           "textbox": false,
           "bbox": [
@@ -2947,6 +3056,7 @@
           "kind": "rect",
           "anchor": "AA40:AB41",
           "group": null,
+          "dash": null,
           "text": "DDD/EEE",
           "textbox": false,
           "bbox": [
@@ -2962,6 +3072,7 @@
           "kind": "rect",
           "anchor": "AD41:AH46",
           "group": null,
+          "dash": null,
           "text": "画面設計書の\n記載範囲。\nDDD：画面設計書ID\nEEE：画面設計書名",
           "textbox": true,
           "bbox": [
@@ -2977,6 +3088,7 @@
           "kind": "rect",
           "anchor": "Q45:T47",
           "group": null,
+          "dash": "dash",
           "text": "AAA\n【BBB】",
           "textbox": false,
           "bbox": [
@@ -2992,6 +3104,7 @@
           "kind": "rect",
           "anchor": "T45:Y49",
           "group": null,
+          "dash": null,
           "text": "表示画面(サブウィンドウ)を表す。\nAAA：画面名称\nBBB：画面ID",
           "textbox": true,
           "bbox": [
@@ -3007,6 +3120,7 @@
           "kind": "rect",
           "anchor": "H20",
           "group": null,
+          "dash": null,
           "text": "SAMPLE",
           "textbox": false,
           "bbox": [
@@ -3024,6 +3138,7 @@
           "kind": "straightConnector1",
           "anchor": "Q16:V16",
           "group": null,
+          "dash": null,
           "start": [
             5800725,
             2171700
@@ -3052,6 +3167,7 @@
           "kind": "straightConnector1",
           "anchor": "Q14:V14",
           "group": null,
+          "dash": null,
           "start": [
             4419600,
             1885950
@@ -3080,6 +3196,7 @@
           "kind": "straightConnector1",
           "anchor": "Z14:AE14",
           "group": null,
+          "dash": null,
           "start": [
             6905625,
             1885950
@@ -3108,6 +3225,7 @@
           "kind": "straightConnector1",
           "anchor": "B15:M15",
           "group": null,
+          "dash": null,
           "start": [
             523875,
             2028825
@@ -3136,6 +3254,7 @@
           "kind": "line",
           "anchor": "N17:N25",
           "group": null,
+          "dash": null,
           "start": [
             3657600,
             2324100
@@ -3164,6 +3283,7 @@
           "kind": "line",
           "anchor": "O17:O24",
           "group": null,
+          "dash": null,
           "start": [
             4086225,
             3324225
@@ -3192,6 +3312,7 @@
           "kind": "line",
           "anchor": "Z37:AB38",
           "group": "138",
+          "dash": null,
           "start": [
             7139517,
             5458402

@@ -46,6 +46,11 @@ def test_existing_document_is_not_overwritten_without_force(tmp_path):
     document.write_text(document.read_text(encoding="utf-8") + "\n書き起こした内容\n", encoding="utf-8")
     assert main(["migrate", str(SAMPLE), "--out", str(out), "--render", "none"]) == 2
     assert "書き起こした内容" in document.read_text(encoding="utf-8")
+    # 文書を残して、中間データだけ作り直す
+    (out / "extract.json").unlink()
+    assert main(["migrate", str(SAMPLE), "--out", str(out), "--render", "none", "--keep-document"]) == 0
+    assert (out / "extract.json").is_file()
+    assert "書き起こした内容" in document.read_text(encoding="utf-8")
 
 
 def test_nfr001_tool_does_not_use_network_libraries():

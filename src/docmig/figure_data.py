@@ -61,15 +61,17 @@ def describe_figure(extract: dict, wanted: str) -> str:
         "",
         "## 図形",
         "",
-        "位置は「左, 上, 幅, 高さ」。文字枠の列が「はい」の図形は、線や図形に添えられたラベルであることが多い。",
+        "位置は「左, 上, 幅, 高さ」で、単位は pt、原点はシートの左上。画像の画素とは比率が違い、縦と横でも比率が違うことがある。",
+        "文字枠の列が「はい」の図形は、線や図形に添えられたラベルであることが多い。線種の列は、実線でない場合だけ書く（dash は破線）。",
         "",
-        "| 節点の名前 | 種類 | 文字 | 文字枠 | グループ | 位置 |",
-        "|---|---|---|---|---|---|",
+        "| 節点の名前 | 種類 | 文字 | 文字枠 | 線種 | グループ | 位置 |",
+        "|---|---|---|---|---|---|---|",
     ]
     for shape in sheet["shapes"]:
         lines.append(
             f"| s{shape['id']} | {shape['kind']} | {_one_line(shape['text'])} | "
-            f"{'はい' if shape['textbox'] else ''} | {shape['group'] or ''} | {_points(shape['bbox'])} |"
+            f"{'はい' if shape['textbox'] else ''} | {shape.get('dash') or ''} | {shape['group'] or ''} | "
+            f"{_points(shape['bbox'])} |"
         )
     lines += [
         "",
@@ -78,8 +80,8 @@ def describe_figure(extract: dict, wanted: str) -> str:
         "始点側と終点側の列は、端点に最も近い図形（候補）と、端点からその図形の辺までの距離。",
         "候補は位置から機械的に求めたもので、正しいとは限らない。画像で確かめること。",
         "",
-        "| 線 | 種類 | 始点側 | 終点側 | 矢じり | 始点 | 終点 |",
-        "|---|---|---|---|---|---|---|",
+        "| 線 | 種類 | 始点側 | 終点側 | 矢じり | 線種 | 始点 | 終点 |",
+        "|---|---|---|---|---|---|---|---|",
     ]
     for connector in sheet["connectors"]:
         heads = {
@@ -90,7 +92,7 @@ def describe_figure(extract: dict, wanted: str) -> str:
         }[(connector["arrow_start"], connector["arrow_end"])]
         lines.append(
             f"| c{connector['id']} | {connector['kind']} | {end(connector, 'start')} | {end(connector, 'end')} | "
-            f"{heads} | {_points(connector['start'])} | {_points(connector['end'])} |"
+            f"{heads} | {connector.get('dash') or ''} | {_points(connector['start'])} | {_points(connector['end'])} |"
         )
     lines += ["", "## 節点の名前と文字の対応", ""]
     lines += [f"- s{shape_id}: {_one_line(text)}" for shape_id, text in names.items()]

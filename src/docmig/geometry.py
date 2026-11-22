@@ -48,7 +48,9 @@ def distance_to_border(point, bbox) -> float:
 def nearest_shape(point, shapes, limit_pt: float = NEAR_LIMIT_PT):
     """点に最も近い図形を返す。limit_pt より遠い場合は None。
 
-    距離が同じ場合は小さい図形を選ぶ（大きな枠の中に置かれた図形を優先するため）。
+    距離が同じ場合は、文字枠でない図形を先に選ぶ（文字枠は線に添えたラベルで
+    あることが多く、線の接続先であることは少ないため）。それも同じ場合は小さい
+    図形を選ぶ（大きな枠の中に置かれた図形を優先するため）。
     """
     best = None
     for shape in shapes:
@@ -56,7 +58,7 @@ def nearest_shape(point, shapes, limit_pt: float = NEAR_LIMIT_PT):
         if w <= 0 and h <= 0:
             continue
         dist = distance_to_border(point, shape["bbox"]) / EMU_PER_PT
-        key = (round(dist, 1), w * h)
+        key = (round(dist, 1), bool(shape.get("textbox")), w * h)
         if best is None or key < best[0]:
             best = (key, shape, dist)
     if best is None or best[2] > limit_pt:

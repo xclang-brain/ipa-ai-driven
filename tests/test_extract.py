@@ -87,6 +87,21 @@ def test_fr004_endpoint_on_a_border_gets_that_shape_as_candidate():
     assert nearest_shape((150 * pt, 125 * pt), shapes) == {"shape": "inner", "distance_pt": 0.0}
 
 
+def test_fr004_label_text_box_is_not_preferred_over_a_shape_at_the_same_distance():
+    pt = EMU_PER_PT
+    shapes = [
+        {"id": "label", "textbox": True, "bbox": [90 * pt, 380 * pt, 20 * pt, 10 * pt]},
+        {"id": "screen", "textbox": False, "bbox": [50 * pt, 390 * pt, 100 * pt, 50 * pt]},
+    ]
+    assert nearest_shape((90 * pt, 390 * pt), shapes)["shape"] == "screen"
+
+
+def test_fr003_dashed_outline_is_recorded(extract):
+    shapes = [s for sheet in extract["sheets"] for s in sheet["shapes"]]
+    assert any(s["dash"] == "dash" for s in shapes)
+    assert any(s["dash"] is None for s in shapes)
+
+
 def test_fr004_endpoint_far_from_any_shape_gets_no_candidate():
     pt = EMU_PER_PT
     shapes = [{"id": "a", "bbox": [0, 0, 10 * pt, 10 * pt]}]

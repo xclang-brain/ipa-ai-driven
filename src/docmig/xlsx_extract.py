@@ -279,6 +279,13 @@ def _anchor_range(anchor) -> str | None:
     return f"{cell_of(start)}:{cell_of(end)}"
 
 
+def _dash(properties) -> str | None:
+    """線種（破線など）。実線や記録がない場合は None。"""
+    dash = properties.find("a:ln/a:prstDash", NS) if properties is not None else None
+    value = dash.get("val") if dash is not None else None
+    return None if value in (None, "solid") else value
+
+
 def _line_ends(properties):
     line = properties.find("a:ln", NS) if properties is not None else None
     if line is None:
@@ -358,6 +365,7 @@ class _DrawingReader:
             "kind": kind,
             "anchor": anchor_range,
             "group": group_id,
+            "dash": _dash(properties),
         }
         if is_connector or kind.startswith(LINE_KINDS):
             start, end = connector_endpoints(bbox, xfrm["flip_h"], xfrm["flip_v"], xfrm["rot"])

@@ -41,8 +41,12 @@ def migrate(args) -> int:
         print(f"対応していない形式: {source.suffix}（現在は .xlsx のみ）", file=sys.stderr)
         return 2
     document = out / DOCUMENT
-    if document.exists() and not args.force:
-        print(f"{document} が既にある。上書きすると書き起こしや修正が失われる。上書きするには --force を付ける", file=sys.stderr)
+    if document.exists() and not (args.force or args.keep_document):
+        print(
+            f"{document} が既にある。上書きすると書き起こしや修正が失われる。"
+            "文書を残して中間データと画像だけ作り直すには --keep-document、上書きするには --force を付ける",
+            file=sys.stderr,
+        )
         return 2
     out.mkdir(parents=True, exist_ok=True)
     extract = extract_xlsx(source, media_dir=out / "media")
@@ -50,6 +54,9 @@ def migrate(args) -> int:
         backend = render(source, extract, out / "figures", args.render)
         print(f"描画: {backend}")
     _write_json(out / EXTRACT, extract)
+    if document.exists() and args.keep_document:
+        print(f"中間データと画像を作り直した。{document} は変更していない")
+        return 0
     doc_id = args.id or out.name
     document.write_text(build_draft(extract, doc_id, source.stem, _relative(source)), encoding="utf-8")
     figures = sum(1 for s in extract["sheets"] if s["shapes"] or s["connectors"])
@@ -100,6 +107,7 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--id", help="文書ID（省略時は出力先のフォルダ名）")
     p.add_argument("--render", choices=["auto", "excel", "libreoffice", "none"], default="auto", help="図を画像にする方法")
     p.add_argument("--force", action="store_true", help="既にある文書を上書きする")
+    p.add_argument("--keep-document", action="store_true", help="既にある文書を残し、中間データと画像だけ作り直す")
     p.set_defaults(run=migrate)
 
     p = commands.add_parser("figure", help="図の一覧、または図を書き起こすための図形と矢印の一覧を出す")
